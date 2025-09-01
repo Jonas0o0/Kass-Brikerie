@@ -1,8 +1,9 @@
+package src.main.java;
 /*
 Classe brique :
 */
 
-public class brique{
+public class Brique{
 
     public int posX; // Position sur l'axe X
     public int posY; // Position sur l'axe Y
@@ -16,11 +17,10 @@ public class brique{
     void positionBrique(int positionX, int positionY){
 
         this.posX = positionX;
-        this.poxY = positionY;
+        this.posY = positionY;
 
         // Déplacer le curseur à la ligne Y, colonne X
 
-        System.out.print(this.afficherBrique());
         return;
     }
 
