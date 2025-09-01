@@ -6,6 +6,15 @@ public class Main {
         Slider s = new Slider();
         Brique bq = new Brique();
 
+
+        Matrix m = new Matrix();
+
+        String ball =
+                "#### #### ####\n" +
+                "#### #### ####\n" +
+                "#### #### ####\n" +
+                "#### #### ####\n" +
+                "#### #### ####\n";
         for(int i = 0; i < 5; i++){
             bq.afficherBrique();
             System.out.print(" ");
@@ -16,5 +25,9 @@ public class Main {
         }
         b.afficher();
         s.affichage();
+
+
+        m.draw(ball, 50, 12);
+        System.out.print(m.render());
     }
 }
