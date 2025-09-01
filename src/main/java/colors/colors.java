@@ -1,4 +1,4 @@
-package src.colors;
+package src.main.java.colors;
 
 public enum colors {
     BLACK("\u001B[0;30m"),

@@ -1,8 +1,8 @@
-package src.menu;
+package src.main.java.menu;
 
 import java.util.Scanner;
 
-import src.colors.colors;
+import src.main.java.colors.colors;
 
 /**
  * Création et afficahge du menu du jeu principal.

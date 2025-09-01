@@ -1,8 +1,8 @@
-package src.menu;
+package src.main.java.menu;
 
 import java.util.Scanner;
 import src.main.java.Main;
-import src.menu.menuRules;
+import src.main.java.menu.menuRules;
 
 public class menuManager {
     public void menuPrincipal() {
@@ -12,7 +12,7 @@ public class menuManager {
         scanner.close();
 
         if(choice=="1") {
-            return Main();
+            Main();
         }
 
         if (choice="2") {
