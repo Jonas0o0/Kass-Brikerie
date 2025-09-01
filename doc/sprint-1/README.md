@@ -1,24 +1,22 @@
-# Sprint 0
+# Sprint 1
 
 Scrum Master : Mano
 
 ## Démo + Planification du sprint suivant
 
 ### Ce que nous avons fait durant ce sprint
-- Trouver une idée de jeu, ainsi que son nom et son slogan
-- Mettre en place le radiateur
-- Préciser le plus possible les tâches et estimer le backlog
+- Réaliser les bases de notre projet ; comme l'apparition de la balle, du slider ainsi que l'organisation des briques
+
 
 ### Ce que nous allons faire durant le prochain sprint
-Débuter les premières tâches nécessaires à la suite du projet ainsi que mettre à jour le radiateur 
+- Continuer les fontionnalités de bases et commencer celles un peu plus poussées
 
 ## Rétrospective
 
 ### Sur quoi avons nous butté ?
 * Qu'est ce qu'il s'est parfaitement bien passé pendant le sprint :
-Trouver les élements importants à développer pour faire avancer le projet ainsi que trouver leurs points d'effort
+L'organisation des tâches
 * Qu’est-ce qui m'a irrité ? dérangé ? :
-Réussir à les décomposer asser pour qu'il puisse être réaliser sur 1 ou 2 sprints
+Travailler pour la première fois en méthode agile, il y a beaucoup de nouvelles choses à appréhender
 
 ### PDCA
-*Non pertinent pour le sprint 0*
