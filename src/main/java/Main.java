@@ -6,11 +6,15 @@ public class Main {
         Slider s = new Slider();
         Brique bq = new Brique();
 
+        for(int i = 0; i < 5; i++){
+            bq.afficherBrique();
+            System.out.print(" ");
+            bq.afficherBrique();
+            System.out.print(" ");
+            bq.afficherBrique();
+            System.out.println();
+        }
         b.afficher();
         s.affichage();
-        for(int i = 0; i < 10; i++){
-            System.out.println();
-            bq.afficherBrique();
-        }
     }
 }
