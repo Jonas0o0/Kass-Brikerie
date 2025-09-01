@@ -54,8 +54,4 @@ public class menuRules {
         scanner.nextLine();
         scanner.close();
     }
-
-    public static void main(String[] args) {
-        menuRegles();
-    }
 }
