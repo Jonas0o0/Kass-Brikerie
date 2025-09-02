@@ -1,8 +1,6 @@
 package src.main.java;
 
-import java.nio.Buffer;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import src.main.java.colors.colors;
 import src.main.java.inputs.tickInputs;
@@ -14,7 +12,6 @@ public class Main {
         Score sc = new Score();
         Ball b = new Ball();
         Slider s = new Slider();
-        Brique bq = new Brique(0, 0);
         Mur mr = new Mur();
 
         Matrix m = new Matrix();
@@ -35,10 +32,14 @@ public class Main {
             Tools.clearScreen();
 
             if(keyPressed=='D' || keyPressed=='d') {
-                s.move(1);
+                if(s.getX()<Matrix.resx-(s.getLongueur()/2)){
+                    s.move(1);
+                }
             }
-            if(keyPressed=='A' || keyPressed=='a') {
-                s.move(-1);
+            if(keyPressed=='A' || keyPressed=='a' || keyPressed=='Q' || keyPressed=='q') {
+                if(s.getX()>(s.getLongueur()/2)){
+                    s.move(-1);
+                }
             }
 
             m.clear();
