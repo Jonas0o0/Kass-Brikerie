@@ -9,6 +9,7 @@ import src.main.java.menu.menuManager;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        Score sc = new Score();
         Ball b = new Ball();
         Slider s = new Slider();
         Brique bq = new Brique(0, 0);
@@ -44,6 +45,7 @@ public class Main {
             m.draw(b.toString(), b.getX(), b.getY());
             m.draw(s.toString(), s.getX() - (s.getLongueur() / 2), s.getY());
             System.out.print(m.render());
+            System.out.println("Score -> " + sc.getScore());
 
         }
 
