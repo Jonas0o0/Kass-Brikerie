@@ -13,7 +13,6 @@ public class menuManager {
             choice = scanner.nextLine();
         } while(!isNumer(choice));
 
-
         if(choice.equals("1")) {
             return;
         }
@@ -22,10 +21,13 @@ public class menuManager {
             menuRules.menuRegles();
         }
 
+        if (choice.equals("3")) {
+            menuClassement.afficherClassement(choice);
+        }
+
         if(choice.equals("4")) {
             System.exit(0);
         }
-        scanner.close();
     }
 
     public static void afficherMenuPrincipal() {
