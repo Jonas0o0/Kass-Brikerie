@@ -20,3 +20,11 @@ L'organisation des tâches
 Travailler pour la première fois en méthode agile, il y a beaucoup de nouvelles choses à appréhender
 
 ### PDCA
+* Quel sujet souhaitons nous améliorer ? (1 seul) : 
+    Préciser d'avantages les tâches
+* Comment améliorer (3 options recommandés) : 
+    - Mieux décomposer
+    - Expliciter
+    - Traduire pour des néophytes en informatique
+* Quelle action mettons nous en place sur le prochain sprint ? : 
+
