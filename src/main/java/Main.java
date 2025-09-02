@@ -18,6 +18,8 @@ public class Main {
 
         menuManager.menuPrincipal();
 
+        sc.addNomJoueur(); // Affichage du choix du Nom du Joueur
+
         Timer t = new Timer();
 
         ArrayList<Brique> mur = mr.afficherBriques();
@@ -55,7 +57,7 @@ public class Main {
             m.draw(b.toString(), b.getX(), b.getY());
             m.draw(s.toString(), s.getX() - (s.getLongueur() / 2), s.getY());
             System.out.print(m.render());
-            System.out.println("Score -> " + colors.YELLOW + sc.getScore() + colors.WHITE);
+            System.out.println("Score " + sc.nomJoueur + "-> " + colors.YELLOW + sc.getScore() + colors.WHITE);
             System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
 
         }
