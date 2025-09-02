@@ -1,30 +1,30 @@
-# Sprint 2
+# Sprint 4
 
-Scrum Master : Mohamed El Amine YAHIAOUI
+Scrum Master : Anas
 
 ## Démo + Planification du sprint suivant
 
 ### Ce que nous avons fait durant ce sprint
-- Nous avons créer les premiers déplacement nécessaires au jeu, via le déplacement et la mise en place du temps réel
+- Nous avons décomposer la gestion des colissions et de la physique de la balle et avons terminé quelque unes de ces décompositions, ainsi que plusieurs petites fonctionnalités
 
 
 ### Ce que nous allons faire durant le prochain sprint
-- Finir les tâches non finalisées lors de ce sprint comme la prise en charge des inputs
+- Nous allons continuer les plus grosses fonctionnalités
 
 ## Rétrospective
 
 ### Sur quoi avons nous butté ?
 * Qu'est ce qu'il s'est parfaitement bien passé pendant le sprint :
-La communication
+Le travail d'équipe
 * Qu’est-ce qui m'a irrité ? dérangé ? :
-La mise en place des inputs
+Une accélération non voulu du jeu
 
 ### PDCA
 * Quel sujet souhaitons nous améliorer ? (1 seul) : 
-    Compléter les tâches les plus dures
+    Notre capacité à coder
 * Comment améliorer (3 options recommandés) : 
-    - Meilleure communication
-    - Entraide
+    - Communiquer
+    - Faire du refactor
 * Quelle action mettons nous en place sur le prochain sprint ? : 
-    La mise en commmun des compétences pour réaliser les plus grosses tâches
+    Tester un nouvel IDE
 
