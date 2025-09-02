@@ -3,6 +3,7 @@ package src.main.java;
 import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import src.main.java.inputs.tickInputs;
 
 import src.main.java.menu.menuManager;
 
@@ -24,7 +25,10 @@ public class Main {
 
         while (true) {
 
-            TimeUnit.MILLISECONDS.sleep(2000);
+            char keyPressed = tickInputs.inputKey();
+            if(keyPressed==27) {
+                System.exit(keyPressed);
+            }
             Tools.clearScreen();
 
 
