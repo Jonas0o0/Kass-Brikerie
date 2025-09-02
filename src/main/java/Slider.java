@@ -35,8 +35,21 @@ public class Slider {
     }
 
     public void affichage(){
-        for(int i=0;i<longueur;i++){
+        for(int i=0;i<this.longueur;i++){
             System.out.print("◼");
         }
     }
+
+    public String toString(){
+        String s = "";
+        for(int i=0;i<this.longueur;i++){
+            s = s + "◼";
+        }
+        return s;
+    }
+
+    public void avancer(int distance){
+        this.positionx += distance;
+    }
+    
 }
