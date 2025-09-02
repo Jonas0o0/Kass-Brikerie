@@ -12,7 +12,7 @@ public class Slider implements Drawing, Move{
     }
 
     Slider(){
-        this(10, 20,6);
+        this(10, 35,6);
     }
 
     public int getLongueur() {
@@ -43,6 +43,10 @@ public class Slider implements Drawing, Move{
 
     public void move(){
         this.x += 1;
+    }    
+    
+    public void move(int direction){
+        this.x += direction;
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Matrix {
     static final int resx = 100; // largeur intérieure (hors bordure)
-    static final int resy = 25;  // hauteur intérieure (hors bordure)
+    static final int resy = 40;  // hauteur intérieure (hors bordure)
 
     private final char[][] buf = new char[resy][resx];
 

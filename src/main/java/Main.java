@@ -22,7 +22,7 @@ public class Main {
         menuManager.menuPrincipal();
 
         ArrayList<Brique> mur = mr.afficherBriques();
-        mr.genererMur(0, 0, 3, 5);
+        mr.genererMur(25, 0, 3, 5);
         
 
 
@@ -34,12 +34,17 @@ public class Main {
             }
             Tools.clearScreen();
 
-
+            if(keyPressed=='D' || keyPressed=='d') {
+                s.move(1);
+            }
+            if(keyPressed=='A' || keyPressed=='a') {
+                s.move(-1);
+            }
 
             m.clear();
-            
-            b.move();
-            s.move();
+            if(b.getX()<s.getX() + s.getLongueur() && b.getX()>s.getX() - 1 && b.getY() == s.getY() - 1){
+                b.move();
+            }
 
             for(int i=0;i<mur.size();i++){
                 m.draw(mur.get(i).toString(), mur.get(i).getX(), mur.get(i).getY());
