@@ -2,6 +2,8 @@ package src.main.java.menu;
 
 import java.util.Scanner;
 
+import src.main.java.Tools;
+
 public class menuManager {
     public static void menuPrincipal() {
         String choice;
@@ -27,6 +29,7 @@ public class menuManager {
     }
 
     public static void afficherMenuPrincipal() {
+        Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
         System.out.println("             [1] Jouer");
         System.out.println("             [2] Règles");

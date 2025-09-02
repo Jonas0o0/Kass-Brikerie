@@ -2,6 +2,7 @@ package src.main.java.menu;
 
 import java.util.Scanner;
 
+import src.main.java.Tools;
 import src.main.java.colors.colors;
 
 /**
@@ -12,6 +13,7 @@ public class menuRules {
 
     // Afficher les règles
     public static void printRules() {
+        Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
         System.out.println(colors.CYAN + "===== RÈGLES DU JEU BREAKER =====" + colors.WHITE);
         System.out.println();

@@ -25,8 +25,7 @@ public class Main {
         while (true) {
 
             TimeUnit.MILLISECONDS.sleep(2000);
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
+            Tools.clearScreen();
 
 
 
