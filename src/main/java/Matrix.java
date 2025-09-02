@@ -18,6 +18,7 @@ public class Matrix {
             Arrays.fill(buf[i], ' ');
         }
     }
+    
 
     /** Dessine S (multi-ligne) à partir de (x,y) sans écraser avec du vide. */
     public void draw(String s, int x, int y) {
