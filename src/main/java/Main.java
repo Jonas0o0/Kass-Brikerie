@@ -8,10 +8,11 @@ import src.main.java.inputs.tickInputs;
 import src.main.java.menu.menuManager;
 
 public class Main {
+    public static Score sc = new Score();
+    public static HP pv = new HP(3);
+    public static Ball b = new Ball();
+    public static Slider s = new Slider();
     public static void main(String[] args) throws Exception {
-        Score sc = new Score();
-        Ball b = new Ball();
-        Slider s = new Slider();
         Mur mr = new Mur();
 
         Matrix m = new Matrix();
@@ -21,8 +22,6 @@ public class Main {
         sc.addNomJoueur(); // Affichage du choix du Nom du Joueur
 
         Timer t = new Timer();
-
-        HP pv = new HP(3);
 
         ArrayList<Brique> mur = mr.afficherBriques();
         mr.genererMur(1, 0, 4, 11);
@@ -49,7 +48,7 @@ public class Main {
             }
 
             
-            b.collision(m);
+            b.collision(m, mr);
             b.move();
             
             m.clear(); //toujours clear avant le draw
@@ -61,9 +60,9 @@ public class Main {
             m.draw(s.toString(), s.getX() - (s.getLongueur() / 2), s.getY());
             
             System.out.print(m.render());
-            System.out.println("Score " + sc.nomJoueur + "-> " + colors.YELLOW + sc.getScore() + colors.WHITE);
+            System.out.println("Score " + Main.sc.getNomJoueur() + "-> " + colors.YELLOW + Main.sc.getScore() + colors.WHITE);
             System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
-            System.out.println("PV : " + pv);
+            System.out.println("PV : " + Main.pv);
 
         }
 

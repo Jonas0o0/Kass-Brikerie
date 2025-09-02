@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Score{
 
-    public int valeur;
-    public String nomJoueur;
+    private int valeur;
+    private String nomJoueur;
 
     public Score(){
         this.valeur = 0;

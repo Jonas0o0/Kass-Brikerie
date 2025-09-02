@@ -37,24 +37,40 @@ public class Ball implements Drawing, Move {
     }
 
     /** Collision "point" : on crashe si la case courante OU voisine contient un non-espace. */
-    public boolean collision(Matrix m) {
+    public boolean collision(Matrix m, Mur mur) {
         final int cx = getX();
         final int cy = getY();
+        boolean loose = false;
 
         // Parcourt les 9 cases autour (y compris le centre)
         for (int dy = -1; dy <= 1; dy++) {
-            final int y = cy + dy;
+            int y = cy + dy;
             for (int dx = -1; dx <= 1; dx++) {
-                final int x = cx + dx;
+                int x = cx + dx;
 
                 // lecture safe (renvoie ' ' si hors-bounds)
                 char cell = m.getChar(x, y);
                 System.out.println(cell);
-                if (cell != ' ' && cell != 'o') {
-                    System.out.println("Collision at (" + x + ", " + y + ") char='" + cell + "'");
-                    this.velocity = -this.velocity; // on inverse la direction
-                    return true; // on a touché quelque chose → crash
+                if (cell != ' ' && cell != 'o' && y == 40) {
+                    if (!loose){
+                        Main.pv.perdu();
+                        Main.b = new Ball();
+                        loose = true;
+                    }
+                }else if ((cell == ':' || cell == '.') && cell != 'o'){
+                    Brique des = null;
+                    for (Brique b : mur.afficherBriques()){
+                        if (b.collision(x,y)){
+                            des = b;
+                        }
+                    }
+                    mur.destroy(des);
+                    this.velocity = -this.velocity;
+                    System.out.println("Brique toucer");
+                }else if (cell != ' ' && cell != 'o'){
+                    this.velocity = -this.velocity;
                 }
+
             }
         }
         return false; // rien autour

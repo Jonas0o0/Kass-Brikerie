@@ -25,4 +25,11 @@ public class Mur{
     ArrayList<Brique> afficherBriques(){
         return mur;
     }
+
+    public void destroy(Brique b){
+        if (b != null){
+            Main.sc.addScore(b.getScore());
+        }
+        this.mur.remove(b);
+    }
 }
