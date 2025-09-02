@@ -29,7 +29,7 @@ public class Main {
         
 
 
-        while (true) {
+        while(true){
 
             char keyPressed = tickInputs.inputKey();
             if(keyPressed==27) {
