@@ -15,7 +15,7 @@ public class menuManager {
 
 
         if(choice.equals("1")) {
-            Main.main(null);
+            return;
         }
 
         if (choice.equals("2")) {

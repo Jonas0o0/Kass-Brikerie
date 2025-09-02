@@ -34,7 +34,7 @@ public class Ball {
     
 
     public void move() {
-        this.y *= this.velocity;
+        this.y += velocity;
     }
 
 }
