@@ -5,18 +5,21 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import src.main.java.Tools;
 import src.main.java.colors.colors;
 
 import java.io.BufferedReader;
 
 public class menuClassement {
     public static void afficherClassement(String path) {
+        Tools.clearScreen();
         printLogo();
         ArrayList<String> liste = new ArrayList<>();
         liste = formatterClassement(importerClassement("res/scores.csv")); 
         for(String s: liste) {
             System.out.println(s);
         }
+        printFooter();
         System.out.print("Appuyez sur entré pour quitter...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
@@ -31,7 +34,7 @@ public class menuClassement {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] dataLine = line.split(",");
-                lines.add(colors.RED+dataLine[0]+" "+colors.BLUE+dataLine[1]+" "+colors.GREEN+dataLine[2]+colors.WHITE);
+                lines.add(dataLine[0]+" "+dataLine[1]+" "+dataLine[2]);
             }
             br.close();
             return lines;
@@ -44,23 +47,32 @@ public class menuClassement {
     }
 
     private static void printLogo() {
-        System.out.print("░██         ░██████████    ░███    ░███████   ░██████████ ░█████████  ░████████     ░██████      ░███    ░█████████  ░███████   \n" + //
-                        "░██         ░██           ░██░██   ░██   ░██  ░██         ░██     ░██ ░██    ░██   ░██   ░██    ░██░██   ░██     ░██ ░██   ░██  \n" + //
-                        "░██         ░██          ░██  ░██  ░██    ░██ ░██         ░██     ░██ ░██    ░██  ░██     ░██  ░██  ░██  ░██     ░██ ░██    ░██ \n" + //
-                        "░██         ░█████████  ░█████████ ░██    ░██ ░█████████  ░█████████  ░████████   ░██     ░██ ░█████████ ░█████████  ░██    ░██ \n" + //
-                        "░██         ░██         ░██    ░██ ░██    ░██ ░██         ░██   ░██   ░██     ░██ ░██     ░██ ░██    ░██ ░██   ░██   ░██    ░██ \n" + //
-                        "░██         ░██         ░██    ░██ ░██   ░██  ░██         ░██    ░██  ░██     ░██  ░██   ░██  ░██    ░██ ░██    ░██  ░██   ░██  \n" + //
-                        "░██████████ ░██████████ ░██    ░██ ░███████   ░██████████ ░██     ░██ ░█████████    ░██████   ░██    ░██ ░██     ░██ ░███████   \n" + //
-                        "                                                                                                                                \n" + //
-                        "                                                                                                                                \n" + //
-                        "                                                                                                                                ");;
+        System.out.print("    ░██         ░██████████    ░███    ░███████   ░██████████ ░█████████  ░████████     ░██████      ░███    ░█████████  ░███████   \n" + //
+                        "    ░██         ░██           ░██░██   ░██   ░██  ░██         ░██     ░██ ░██    ░██   ░██   ░██    ░██░██   ░██     ░██ ░██   ░██  \n" + //
+                        "    ░██         ░██          ░██  ░██  ░██    ░██ ░██         ░██     ░██ ░██    ░██  ░██     ░██  ░██  ░██  ░██     ░██ ░██    ░██ \n" + //
+                        "    ░██         ░█████████  ░█████████ ░██    ░██ ░█████████  ░█████████  ░████████   ░██     ░██ ░█████████ ░█████████  ░██    ░██ \n" + //
+                        "    ░██         ░██         ░██    ░██ ░██    ░██ ░██         ░██   ░██   ░██     ░██ ░██     ░██ ░██    ░██ ░██   ░██   ░██    ░██ \n" + //
+                        "    ░██         ░██         ░██    ░██ ░██   ░██  ░██         ░██    ░██  ░██     ░██  ░██   ░██  ░██    ░██ ░██    ░██  ░██   ░██  \n" + //
+                        "    ░██████████ ░██████████ ░██    ░██ ░███████   ░██████████ ░██     ░██ ░█████████    ░██████   ░██    ░██ ░██     ░██ ░███████   \n" + //
+                        "                                                                                                                                    \n" + //
+                        "                                                                                                                                    \n" + //
+                        "                                                                                                                                    \n" + //
+                        "           ░████████████░                                                                  ░████████████░                                                  \n" + //
+                        "              ░██████░                                                                        ░██████░\n" + //
+                        "               ░████░                                                                          ░████░\n");
+    }
+
+    private static void printFooter() {
+        System.out.print("               ░████░                                                                          ░████░\n" + //
+                        "              ░██████░                                                                        ░██████░\n" + //
+                        "           ░████████████░                                                                  ░████████████░\n");
     }
 
     private static ArrayList<String> formatterClassement(ArrayList<String> list) {
         int i=0;
         ArrayList<String> formatedList = new ArrayList<>();
         for(String e: list) {
-            formatedList.add("░██░ "+space(20-e.length())+e+" ░██░");// 20 pixels de long
+            formatedList.add(space(16)+"░██░"+space(44-e.length())+e+space(32)+"░██░");// 20 pixels de long
             i++;
         }
         return formatedList;
@@ -70,7 +82,7 @@ public class menuClassement {
         if(number<=0) return "";
         String res="";
         for (int i = 0; i < number; i++) {
-            res=res+"";
+            res=res+" ";
         }
         return res;
     }
