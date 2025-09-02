@@ -41,7 +41,7 @@ public class Main {
             b.move();
             s.avancer(1);
             m.draw(b.toString(), b.getX(), b.getY());
-            m.draw(s.toString(), s.getX()-(s.longueur/2), s.getY());
+            m.draw(s.toString(), s.getX()-(s.getLongueur()/2), s.getY());
             System.out.print(m.render());
 
         }

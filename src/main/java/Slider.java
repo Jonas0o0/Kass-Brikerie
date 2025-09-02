@@ -1,9 +1,9 @@
 package src.main.java;
 
 public class Slider {
-    public int  positionx;
-    public final int positiony = 10;
-    public int longueur; 
+    private int  positionx;
+    private final int positiony = 10;
+    private int longueur; 
 
     Slider(int positionx,int longueur){
         this.positionx = positionx;
@@ -51,5 +51,5 @@ public class Slider {
     public void avancer(int distance){
         this.positionx += distance;
     }
-    
+
 }
