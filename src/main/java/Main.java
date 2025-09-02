@@ -1,5 +1,7 @@
 package src.main.java;
 
+import src.main.java.menu.menuManager;
+
 public class Main {
     public static void main(String[] args) {
         Ball b = new Ball();
@@ -8,6 +10,8 @@ public class Main {
 
 
         Matrix m = new Matrix();
+
+        menuManager.menuPrincipal();
 
         String ball =
                 "#### #### ####\n" +
