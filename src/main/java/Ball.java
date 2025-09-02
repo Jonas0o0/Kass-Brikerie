@@ -1,7 +1,7 @@
 package src.main.java;
 import src.main.java.colors.colors;
 
-public class Ball implements Drawing{
+public class Ball implements Drawing, Move{
     private double x;
     private double y;
     public static final int HAUTEUR = 1;

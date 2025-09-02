@@ -3,6 +3,8 @@ package src.main.java;
 import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+
+import src.main.java.colors.colors;
 import src.main.java.inputs.tickInputs;
 
 import src.main.java.menu.menuManager;
@@ -37,7 +39,7 @@ public class Main {
             m.clear();
             
             b.move();
-            s.avancer(1);
+            s.move();
 
             for(int i=0;i<mur.size();i++){
                 m.draw(mur.get(i).toString(), mur.get(i).getX(), mur.get(i).getY());
@@ -45,7 +47,7 @@ public class Main {
             m.draw(b.toString(), b.getX(), b.getY());
             m.draw(s.toString(), s.getX() - (s.getLongueur() / 2), s.getY());
             System.out.print(m.render());
-            System.out.println("Score -> " + sc.getScore());
+            System.out.println("Score -> " + colors.YELLOW + sc.getScore() + colors.WHITE);
 
         }
 

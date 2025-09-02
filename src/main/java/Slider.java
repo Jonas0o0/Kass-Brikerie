@@ -1,6 +1,6 @@
 package src.main.java;
 
-public class Slider implements Drawing {
+public class Slider implements Drawing, Move{
     private int x;
     private int y;
     private int longueur; 
@@ -41,8 +41,8 @@ public class Slider implements Drawing {
         return s;
     }
 
-    public void avancer(int distance){
-        this.x += distance;
+    public void move(){
+        this.x += 1;
     }
 
 }
