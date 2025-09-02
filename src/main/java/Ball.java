@@ -5,12 +5,12 @@ public class Ball {
     private int y;
     private double velocity = 1.2;
 
-    Ball(){
+    Ball() {
         this.x = 15;
         this.y = 20;
     }
 
-    Ball (int x, int y){
+    Ball(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -23,7 +23,7 @@ public class Ball {
         return y;
     }
 
-    public void afficher(){
+    public void afficher() {
         System.out.println("⚪");
     }
 
@@ -31,9 +31,12 @@ public class Ball {
     public String toString() {
         return "⚪";
     }
+    
 
-    public void move(){
+    public void move() {
         this.y *= this.velocity;
     }
-    
+
 }
+ 
+

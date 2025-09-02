@@ -2,7 +2,7 @@ package src.main.java;
 
 public class Slider {
     public int  positionx;
-    public final int positiony = 26;
+    public final int positiony = 10;
     public int longueur; 
 
     Slider(int positionx,int longueur){
@@ -18,11 +18,11 @@ public class Slider {
         return longueur;
     }
 
-    public int getPositionx() {
+    public int getX() {
         return positionx;
     }
 
-    public int getPositiony() {
+    public int getY() {
         return positiony;
     }
 

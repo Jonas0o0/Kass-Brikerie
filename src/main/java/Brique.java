@@ -22,10 +22,6 @@ public class Brique{
         return this.posY;
     }
 
-    // Affiche la brique
-    void afficherBrique(){
-        System.out.print(" ...... \n|......|");
-    }
     
     // Positionnement de la brique aux coordonnées placées en paramètres
     void positionBrique(int positionX, int positionY){
@@ -35,9 +31,14 @@ public class Brique{
 
         // Déplacer le curseur 
 
-        System.out.print(this.afficherBrique());
+        System.out.println(this.toString());
 
         return;
+    }
+
+    @Override
+    public String toString() {
+        return " ...... \n:......:";
     }
 
 
