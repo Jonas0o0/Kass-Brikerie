@@ -1,9 +1,9 @@
 package src.main.java;
 
 public interface Drawing {
-    public double getX();
+    public int getX();
 
-    public double getY();
+    public int getY();
 
     @Override
     public String toString();

@@ -19,12 +19,12 @@ public class Ball implements Drawing{
         this.y = y;
     }
 
-    public double getX() {
-        return x;
+    public int getX() {
+        return (int) this.x;
     }
 
-    public double getY() {
-        return y;
+    public int getY() {
+        return (int) this.y;
     }
 
     @Override

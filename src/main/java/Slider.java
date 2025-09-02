@@ -1,11 +1,11 @@
 package src.main.java;
 
 public class Slider implements Drawing {
-    private double x;
-    private double y;
+    private int x;
+    private int y;
     private int longueur; 
 
-    Slider(double x, double y, int longueur){
+    Slider(int x, int y, int longueur){
         this.x = x;
         this.y = y;
         this.longueur = longueur;
@@ -19,11 +19,11 @@ public class Slider implements Drawing {
         return longueur;
     }
 
-    public double getX() {
+    public int getX() {
         return this.x;
     }
 
-    public double getY() {
+    public int getY() {
         return this.y;
     }
 

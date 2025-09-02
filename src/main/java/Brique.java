@@ -5,27 +5,27 @@ Classe brique :
 
 public class Brique implements Drawing{
 
-    public double x; // Position sur l'axe X
-    public double y; // Position sur l'axe Y
+    public int x; // Position sur l'axe X
+    public int y; // Position sur l'axe Y
     public int score = 10; // Rajoute 10 au score en cas de destruction de la brique 
-    public static final int HAUTEUR = 2;
-    public static final int LARGEUR = 8; 
+    public final static int HAUTEUR = 2;
+    public final static int LARGEUR = 8; 
 
-    Brique(double positionX, double positionY){
+    Brique(int positionX, int positionY){
         this.x = positionX;
         this.y = positionY;
     }
 
-    public double getX() {
+    public int getX() {
         return this.x;
     }
 
-    public double getY() {
+    public int getY() {
         return this.y;
     }
     
     // Positionnement de la brique aux coordonnées placées en paramètres
-    void positionBrique(double positionX, double positionY){
+    void positionBrique(int positionX, int positionY){
 
         this.x = positionX;
         this.y = positionY;

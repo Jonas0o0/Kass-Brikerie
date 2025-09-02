@@ -12,13 +12,13 @@ public class Mur{
 
     void genererLigne(int x , int y, int nbBriques){
         for(int i = 0; i<nbBriques; i++){
-            mur.add(new Brique(x + i*(Brique.longeur+1) , y));
+            mur.add(new Brique(x + i*(Brique.LARGEUR+1) , y));
         }
     }
 
     void genererMur(int x, int y, int hauteur, int longueur){
         for(int i = 0; i<hauteur; i++){
-            genererLigne(x, y + i*(Brique.hauteur+1), longueur);
+            genererLigne(x, y + i*(Brique.HAUTEUR+1), longueur);
         }
     }
 
