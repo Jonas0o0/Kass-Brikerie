@@ -1,37 +1,30 @@
 package src.main.java;
 
-public class Slider {
-    private int  positionx;
-    private final int positiony = 10;
+public class Slider implements Drawing {
+    private double x;
+    private double y;
     private int longueur; 
 
-    Slider(int positionx,int longueur){
-        this.positionx = positionx;
+    Slider(double x, double y, int longueur){
+        this.x = x;
+        this.y = y;
         this.longueur = longueur;
     }
 
     Slider(){
-        this(10,6);
+        this(10, 20,6);
     }
 
     public int getLongueur() {
         return longueur;
     }
 
-    public int getX() {
-        return positionx;
+    public double getX() {
+        return this.x;
     }
 
-    public int getY() {
-        return positiony;
-    }
-
-    public void setLongueur(int longueur) {
-        this.longueur = longueur;
-    }
-
-    public void setPositionx(int positionx) {
-        this.positionx = positionx;
+    public double getY() {
+        return this.y;
     }
 
     public void affichage(){
@@ -49,7 +42,7 @@ public class Slider {
     }
 
     public void avancer(int distance){
-        this.positionx += distance;
+        this.x += distance;
     }
 
 }

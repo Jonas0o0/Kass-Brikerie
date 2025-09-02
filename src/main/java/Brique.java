@@ -3,40 +3,32 @@ package src.main.java;
 Classe brique :
 */
 
-public class Brique{
+public class Brique implements Drawing{
 
-    public int posX; // Position sur l'axe X
-    public int posY; // Position sur l'axe Y
+    public double x; // Position sur l'axe X
+    public double y; // Position sur l'axe Y
     public int score = 10; // Rajoute 10 au score en cas de destruction de la brique 
-    public final static int hauteur = 2;
-    public final static int longeur = 8;
+    public static final int HAUTEUR = 2;
+    public static final int LARGEUR = 8; 
 
-    Brique(int positionX, int positionY){
-        this.posX = positionX;
-        this.posY = positionY;
+    Brique(double positionX, double positionY){
+        this.x = positionX;
+        this.y = positionY;
     }
 
-    public int getPositionX() {
-        return this.posX;
+    public double getX() {
+        return this.x;
     }
 
-    public int getPositionY() {
-        return this.posY;
-    }
-
-    public int getLongeur() {
-        return this.longeur;
-    }
-
-    public int getHauteur() {
-        return this.hauteur;
+    public double getY() {
+        return this.y;
     }
     
     // Positionnement de la brique aux coordonnées placées en paramètres
-    void positionBrique(int positionX, int positionY){
+    void positionBrique(double positionX, double positionY){
 
-        this.posX = positionX;
-        this.posY = positionY;
+        this.x = positionX;
+        this.y = positionY;
 
         // Déplacer le curseur 
 
@@ -47,7 +39,7 @@ public class Brique{
 
     @Override
     public String toString() {
-        return " ...... \n:......:";
+        return "........\n:......:";
     }
 
 

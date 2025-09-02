@@ -1,5 +1,11 @@
 package src.main.java;
 
-public class Drawing {
-    
+public interface Drawing {
+    public double getX();
+
+    public double getY();
+
+    @Override
+    public String toString();
 }
+

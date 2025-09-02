@@ -1,9 +1,13 @@
 package src.main.java;
+import src.main.java.colors.colors;
 
-public class Ball {
-    private int x;
-    private int y;
+public class Ball implements Drawing{
+    private double x;
+    private double y;
+    public static final int HAUTEUR = 1;
+    public static final int LARGEUR = 1; 
     private double velocity = 1.2;
+
 
     Ball() {
         this.x = 15;
@@ -15,21 +19,17 @@ public class Ball {
         this.y = y;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
-    }
-
-    public void afficher() {
-        System.out.println("⚪");
     }
 
     @Override
     public String toString() {
-        return "⚪";
+        return colors.PURPLE+"O"+colors.WHITE;
     }
     
 

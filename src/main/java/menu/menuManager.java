@@ -2,8 +2,6 @@ package src.main.java.menu;
 
 import java.util.Scanner;
 
-import src.main.java.Main;
-
 public class menuManager {
     public static void menuPrincipal() {
         String choice;
