@@ -18,15 +18,17 @@ public class tickInputs {
 
         Date adate = new Date();
         long atime = adate.getTime();
-        //System.out.println(atime);
+        System.out.println(atime);
         int ch = reader.read(1);
         Date bdate = new Date();
 
         long btime = bdate.getTime();
         if (btime - atime < 1) {
             Thread.sleep(1 - (btime - atime));
-            //System.out.println(new Date().getTime() - atime);
         }
+        System.out.println(new Date().getTime() - atime);
+
+
         reader.close();
         terminal.close();
 

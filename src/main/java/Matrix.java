@@ -15,7 +15,7 @@ public class Matrix {
     /** Remplit le buffer d'espaces. */
     public void clear() {
         for (int i = 0; i < resy; i++) {
-            Arrays.fill(buf[i], ' ');
+            Arrays.fill(this.buf[i], ' ');
         }
     }
     
@@ -38,7 +38,7 @@ public class Matrix {
                 // On "supprime les caractères vides" : on n'écrit pas les blancs.
                 // => pas d'écrasement par des espaces/tabs.
                 if (!Character.isWhitespace(c)) {
-                    buf[yy][xx] = c;
+                    this.buf[yy][xx] = c;
                 }
             }
         }
@@ -56,7 +56,7 @@ public class Matrix {
         // Corps + bordures latérales
         for (int i = 0; i < resy; i++) {
             out.append('#');
-            out.append(buf[i]);
+            out.append(this.buf[i]);
             out.append('#').append('\n');
         }
 
@@ -65,6 +65,11 @@ public class Matrix {
         out.append('\n');
 
         return out.toString();
+    }
+
+    public char getChar(int posX, int posY){
+        if (posX < 0 || posX >= resx || posY < 0 || posY >= resy) return '#'; // hors écran => vide
+        return this.buf[posY][posX];
     }
 
 }
