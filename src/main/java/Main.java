@@ -33,7 +33,7 @@ public class Main {
 
             char keyPressed = tickInputs.inputKey();
             if(keyPressed==27) {
-                System.exit(keyPressed);
+                menuManager.menuPrincipal();
             }
             Tools.clearScreen();
 

@@ -23,7 +23,7 @@ public class menuClassement {
         System.out.print("Appuyez sur entré pour quitter...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-
+        menuManager.menuPrincipal();
     }
 
     private static ArrayList<String> importerClassement(String path) {

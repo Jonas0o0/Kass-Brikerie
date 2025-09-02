@@ -54,5 +54,6 @@ public class menuRules {
         printRules();
         System.err.println("Appuyez sur une touche pour continuer...");
         scanner.nextLine();
+        menuManager.menuPrincipal();
     }
 }
