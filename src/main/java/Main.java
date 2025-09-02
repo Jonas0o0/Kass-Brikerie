@@ -22,6 +22,8 @@ public class Main {
 
         Timer t = new Timer();
 
+        HP pv = new HP(3);
+
         ArrayList<Brique> mur = mr.afficherBriques();
         mr.genererMur(1, 0, 4, 11);
         
@@ -61,6 +63,7 @@ public class Main {
             System.out.print(m.render());
             System.out.println("Score " + sc.nomJoueur + "-> " + colors.YELLOW + sc.getScore() + colors.WHITE);
             System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
+            System.out.println("PV : " + pv);
 
         }
 
