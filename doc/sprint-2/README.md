@@ -21,10 +21,11 @@ La mise en place des inputs
 
 ### PDCA
 * Quel sujet souhaitons nous améliorer ? (1 seul) : 
-    La mise en commmun des compétences pour réaliser les plus grosses tâches
+    Compléter les tâches les plus dures
 * Comment améliorer (3 options recommandés) : 
     - Meilleure communication
     - Entraide
     - 
 * Quelle action mettons nous en place sur le prochain sprint ? : 
+    La mise en commmun des compétences pour réaliser les plus grosses tâches
 
