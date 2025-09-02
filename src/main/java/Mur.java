@@ -1,21 +1,18 @@
 package src.main.java;
 
+import java.util.ArrayList;
+
 public class Mur{
 
-    public Brique[] mur;
-    public int taille = 10;
+    public ArrayList<Brique> mur;
 
     public Mur(){
-        mur = new Brique[this.taille];
-    }
-
-    public Mur(int taille){
-        mur = new Brique[taille];
+        mur = new ArrayList<Brique>();
     }
 
     void genererLigne(int x , int y, int nbBriques){
         for(int i = 0; i<nbBriques; i++){
-            mur[i] = new Brique(x + i*(Brique.longeur+1) , y);
+            mur.add(new Brique(x + i*(Brique.longeur+1) , y));
         }
     }
 
@@ -25,7 +22,7 @@ public class Mur{
         }
     }
 
-    Brique[] afficherBriques(){
+    ArrayList<Brique> afficherBriques(){
         return mur;
     }
 }

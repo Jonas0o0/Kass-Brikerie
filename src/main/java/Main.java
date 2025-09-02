@@ -1,6 +1,7 @@
 package src.main.java;
 
 import java.nio.Buffer;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import src.main.java.menu.menuManager;
@@ -10,7 +11,7 @@ public class Main {
         Ball b = new Ball();
         Slider s = new Slider();
         Brique bq = new Brique(0, 0);
-        Mur mr = new Mur(20);
+        Mur mr = new Mur();
 
         Matrix m = new Matrix();
 
@@ -49,12 +50,12 @@ public class Main {
             
             b.move();
             s.avancer(1);
-            Brique[] mur = mr.afficherBriques();
+            ArrayList<Brique> mur = mr.afficherBriques();
 
-            /*for(int i=0;i<mur.length;i++){
+            for(int i=0;i<mur.size();i++){
                 System.out.println(mur);
-                m.draw(mur[i].toString(), mur[i].getPositionX(), mur[i].getPositionY());
-            }*/
+                m.draw(mur.get(i).toString(), mur.get(i).getPositionX(), mur.get(i).getPositionY());
+            }
             m.draw(b.toString(), b.getX(), b.getY());
             m.draw(s.toString(), s.getX() - (s.getLongueur() / 2), s.getY());
             System.out.print(m.render());
