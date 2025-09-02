@@ -18,6 +18,8 @@ public class Main {
 
         menuManager.menuPrincipal();
 
+        Timer t = new Timer();
+
         ArrayList<Brique> mur = mr.afficherBriques();
         mr.genererMur(25, 0, 3, 5);
         
@@ -54,6 +56,7 @@ public class Main {
             m.draw(s.toString(), s.getX() - (s.getLongueur() / 2), s.getY());
             System.out.print(m.render());
             System.out.println("Score -> " + colors.YELLOW + sc.getScore() + colors.WHITE);
+            System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
 
         }
 
