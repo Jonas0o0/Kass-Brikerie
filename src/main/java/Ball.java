@@ -1,5 +1,7 @@
 package src.main.java;
 
+import java.util.ArrayList;
+
 import src.main.java.colors.colors;
 
 public class Ball implements Drawing, Move {
@@ -21,12 +23,27 @@ public class Ball implements Drawing, Move {
         this.y = y;
     }
 
+    Ball(int x, int y, double vx, double vy) {
+        this.x = x;
+        this.y = y;
+        this.vx = vx;
+        this.vy = vy;
+    }
+
     public int getX() {
         return (int) this.x;
     }
 
     public int getY() {
         return (int) this.y;
+    }
+
+    public double getVx(){
+        return this.vx;
+    }
+
+    public double getVy(){
+        return this.vy;
     }
 
     public int getLargeur(){
@@ -63,9 +80,10 @@ public class Ball implements Drawing, Move {
                 char cell = m.getChar(x, y);
                 
                 if (cell != ' ' && cell != 'o' && y == Matrix.resy) {
-                    if (!loose){
+                    Main.bs.remove(this);
+                    if (!loose && Main.bs.size() == 0){
                         Main.pv.perdu();
-                        Main.b = new Ball();
+                        Main.bs.add(new Ball());
                         loose = true;
                     }
                 }else if ((cell == ':' || cell == '.') && cell != 'o'){

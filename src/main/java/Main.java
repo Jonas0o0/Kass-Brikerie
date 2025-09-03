@@ -11,7 +11,7 @@ import src.main.java.menu.menuManager;
 public class Main {
     public static Score sc;
     public static HP pv;
-    public static Ball b;
+    public static ArrayList<Ball> bs;
     public static Slider s;
     public static ArrayList<Bonus> bonus;
     public static void main(String[] args) throws Exception {
@@ -23,8 +23,9 @@ public class Main {
                 boolean loose = false;
                 
                 Main.sc = new Score();
-                Main.pv = new HP(3);
-                Main.b = new Ball();
+                Main.pv = new HP(20);
+                Main.bs = new ArrayList<Ball>();
+                Main.bs.add(new Ball());
                 Main.s = new Slider();
                 Mur mr = new Mur();
                 Main.bonus = new ArrayList<Bonus>();
@@ -62,11 +63,18 @@ public class Main {
                                 }
 
 
+                                //verifie tous les bonus, les appliques et les supprimes si en dehors de l'écran
+                                for(int i = 0; i<bonus.size(); i++){
+                                        Bonus.check(bonus, bonus.get(i));
+                                }
+
                                 Tools.clearScreen();
 
+                                for(int i = 0; i<Main.bs.size(); i++){
+                                        Main.bs.get(i).collision(m, mr, s);
+                                        Main.bs.get(i).move();
+                                }
                                 
-                                Main.b.collision(m, mr, s);
-                                Main.b.move();
                                 for(Bonus b : Main.bonus){
                                         b.move();
                                 }
@@ -80,7 +88,10 @@ public class Main {
                                         m.draw(Main.bonus.get(i).toString(), Main.bonus.get(i).getX(), Main.bonus.get(i).getY());
                                 }
 
-                                m.draw(b.toString(), b.getX(), b.getY());
+                                for(int i = 0; i<Main.bs.size(); i++){
+                                        m.draw(Main.bs.get(i).toString(), Main.bs.get(i).getX(), Main.bs.get(i).getY());
+                                }
+                                
                                 m.draw(s.toString(), s.getX() - (s.getLargeur() / 2), s.getY());
                                 
                                 System.out.print(m.render());
