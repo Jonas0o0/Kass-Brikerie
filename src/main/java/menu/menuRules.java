@@ -1,6 +1,5 @@
 package src.main.java.menu;
 
-import java.util.Scanner;
 
 import src.main.java.Tools;
 import src.main.java.colors.colors;

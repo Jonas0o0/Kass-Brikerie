@@ -3,7 +3,6 @@ package src.main.java.menu;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import src.main.java.Tools;
 
@@ -28,7 +27,7 @@ public class menuClassement {
 
     private static ArrayList<String> importerClassement() {
         File file = new File("/home/infoetu/ethan.seulin.etu/Public/dataKassBrikerie/scores.csv");
-        if(!file.canRead()||!file.canWrite()) {
+        if (!file.canRead() || !file.canWrite()) {
             file = new File("res/scores.csv");
         }
         try {

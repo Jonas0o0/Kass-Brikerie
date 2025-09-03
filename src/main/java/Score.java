@@ -1,6 +1,5 @@
 package src.main.java;
 
-import java.util.Scanner;
 
 import src.main.java.menu.menuManager;
 
