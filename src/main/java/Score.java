@@ -12,9 +12,11 @@ public class Score{
 
     private int valeur;
     private String nomJoueur;
+    private int nbrBriqueCassées;
 
     public Score(){
         this.valeur = 0;
+        this.nbrBriqueCassées = 0;
     }
 
     public void addScore(int valeur){
@@ -23,6 +25,10 @@ public class Score{
 
     public void addScoreBriqueBreak(){
         this.valeur = this.valeur + 10;
+    }
+
+    public void addNbrBriqueBreak(){
+        this.nbrBriqueCassées++;
     }
 
 
@@ -41,11 +47,15 @@ public class Score{
         return this.nomJoueur;
     }
 
+    public int getNbrBriqueCassées() {
+        return nbrBriqueCassées;
+    }
+
     public void enregistrerScore(){ // Met à jour le CSV avec le score de l'utilisateur
         try {
             File file = new File("res/scores.csv");
             BufferedReader br = new BufferedReader(new FileReader(file));
-    
+            
             ArrayList<String> listeBase = new ArrayList<>();
             String ligne;
             while ((ligne=br.readLine())!=null) {
@@ -58,7 +68,7 @@ public class Score{
                 bw.append(e);
                 bw.newLine();
             }
-            bw.append(this.nomJoueur+","+this.valeur+",0");
+            bw.append(this.nomJoueur+","+this.valeur+","+this.nbrBriqueCassées);
             bw.close();
         } catch(Exception e) {
             e.printStackTrace();

@@ -29,6 +29,7 @@ public class Mur{
     public void destroy(Brique b){
         if (b != null){
             Main.sc.addScore(b.getScore());
+            Main.sc.addNbrBriqueBreak();
         }
         this.mur.remove(b);
     }
