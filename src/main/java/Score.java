@@ -1,6 +1,9 @@
 package src.main.java;
 
 import java.util.Scanner;
+
+import src.main.java.menu.menuManager;
+
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -33,10 +36,9 @@ public class Score{
 
 
     public void addNomJoueur(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez un nom de joueur : ");
 
-        nomJoueur = scanner.nextLine();
+        nomJoueur = menuManager.scanner.nextLine();
     }
 
     public int getScore(){

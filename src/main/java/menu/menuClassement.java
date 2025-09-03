@@ -3,10 +3,7 @@ package src.main.java.menu;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
-
-import javax.tools.Tool;
 
 import src.main.java.Tools;
 
@@ -25,8 +22,7 @@ public class menuClassement {
         }
         printFooter();
         System.out.print("Appuyez sur entré pour quitter...");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
+        menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }
 

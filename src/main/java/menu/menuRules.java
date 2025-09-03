@@ -50,10 +50,9 @@ public class menuRules {
     }
 
     public static void menuRegles() {
-        Scanner scanner = new Scanner(System.in);
         printRules();
         System.err.println("Appuyez sur une touche pour continuer...");
-        scanner.nextLine();
+        menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }
 }

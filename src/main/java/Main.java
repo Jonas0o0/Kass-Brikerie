@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import src.main.java.colors.colors;
 import src.main.java.inputs.TickInputs;
-
+import src.main.java.menu.menuGameOver;
 import src.main.java.menu.menuManager;
 
 public class Main {
@@ -19,6 +19,8 @@ public class Main {
                 // ---- Réglage du tick ----
                 final int TPS = 60; // ticks par seconde
                 final long STEP_NS = 1_000_000_000L / TPS; // durée d'un tick en ns
+
+                boolean loose = false;
                 
                 Main.sc = new Score();
                 Main.pv = new HP(3);
@@ -28,7 +30,7 @@ public class Main {
                 Main.bonus = new ArrayList<Bonus>();
 
                 Matrix m = new Matrix();
-
+                menuManager.scanner = new Scanner(System.in);
                 menuManager.menuPrincipal();
 
                 sc.addNomJoueur(); // Affichage du choix du Nom du Joueur
@@ -43,16 +45,21 @@ public class Main {
                 TickInputs.init();
 
                 try {
-                        while(true){
+                        while(!loose){
                                 long now = System.nanoTime();
                                 int key = TickInputs.poll(); // a/q = gauche, d = droite, e = quitter
                                 if (key == 'm' || key == 'M') {
-                                menuManager.menuPrincipal();
+                                        menuManager.menuPrincipal();
                                 }
-                                if (TickInputs.left())
-                                s.move(-1);
-                                if (TickInputs.right())
-                                s.move(1);
+                                if (TickInputs.left()){
+                                        if(s.getX()>(s.getLargeur()/2)){
+                                                s.move(-1);
+                                        }
+                                }if (TickInputs.right()){
+                                        if(s.getX()<Matrix.resx-(s.getLargeur()/2)){
+                                                s.move(1);
+                                        }
+                                }
 
 
                                 Tools.clearScreen();
@@ -83,7 +90,9 @@ public class Main {
 
 
                                 if(pv.gameOver()) {
-                                        menuGameOver.gameOverScreen(sc, t);
+                                        menuGameOver.gameOverScreen(t);
+                                        menuManager.scanner.close();
+                                        loose = true;
                                 }
 
                                 // 4) Régulation simple (petit sleep pour éviter 100% CPU)

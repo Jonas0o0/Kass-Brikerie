@@ -5,28 +5,30 @@ import java.util.Scanner;
 import src.main.java.Tools;
 
 public class menuManager {
+    public static Scanner scanner;
+
     public static void menuPrincipal() {
         String choice;
-        Scanner scanner = new Scanner(System.in);
+
         do {
             afficherMenuPrincipal();
             choice = scanner.nextLine();
-        } while(!isNumer(choice));
+        } while (!isNumer(choice));
 
-        if(choice.equals("1")) {
-            return;
-        }
-
-        if (choice.equals("2")) {
-            menuRules.menuRegles();
-        }
-
-        if (choice.equals("3")) {
-            menuClassement.afficherClassement(choice);
-        }
-
-        if(choice.equals("4")) {
-            System.exit(0);
+        switch (choice) {
+            case "1":
+                return;
+            case "2":
+                menuRules.menuRegles();
+                break;
+            case "3":
+                menuClassement.afficherClassement(choice);
+                break;
+            case "4":
+                System.exit(0);
+                break;
+            default:
+                System.out.println("⚠ Choix invalide, veuillez réessayer.");
         }
     }
 
