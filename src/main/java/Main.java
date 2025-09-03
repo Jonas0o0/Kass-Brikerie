@@ -1,6 +1,7 @@
 package src.main.java;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import src.main.java.colors.colors;
 import src.main.java.inputs.tickInputs;
@@ -64,6 +65,21 @@ public class Main {
             System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
             System.out.println("PV : " + Main.pv);
 
+
+            if(pv.gameOver()) {
+                Scanner scanner = new Scanner(System.in);
+                sc.enregistrerScore();
+                Tools.clearScreen();
+                Tools.gameOverScreen();
+                System.out.println("\n\n\n");
+                System.out.println(Tools.space(20)+colors.YELLOW+"[ "+colors.PURPLE+sc.getNomJoueur()+colors.YELLOW+" ]\n"+colors.WHITE);
+                System.out.println(Tools.space(20)+colors.YELLOW+"Score: \t"+colors.PURPLE+sc.getScore()+colors.WHITE);
+                System.out.println(Tools.space(20)+colors.YELLOW+"Brique cassées: \t"+colors.PURPLE+sc.getScore()+colors.WHITE);
+                System.out.println(Tools.space(20)+colors.YELLOW+"Temps écoulé: \t"+colors.PURPLE+t.getSeconds()+"s"+colors.WHITE);
+                scanner.nextLine();
+                System.out.println("Appuyez sur entré pour continuer...");
+                menuManager.menuPrincipal();
+            }
         }
 
     }
