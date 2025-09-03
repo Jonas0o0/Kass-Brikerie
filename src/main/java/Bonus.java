@@ -72,7 +72,10 @@ public class Bonus implements Drawing, Move{
                 Main.bs.addAll(newBall);
                 remove(list, b);
             }else{
-                //ralentissement de la balle
+                for(Ball ball : Main.bs){
+                    ball.setVx(ball.getVx()/2);
+                    ball.setVy(ball.getVy()/2);
+                }
                 remove(list, b);
             }
         }
