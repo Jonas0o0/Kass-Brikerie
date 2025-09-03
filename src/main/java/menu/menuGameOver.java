@@ -26,7 +26,7 @@ public class menuGameOver {
 						+ Main.sc.getScore() + colors.WHITE);
 		System.out.println(
 				Tools.space(30) + colors.YELLOW + "Brique cassées:     " + colors.PURPLE
-						+ Main.sc.getScore() + colors.WHITE);
+						+ Main.sc.getNbrBriqueCassées() + colors.WHITE);
 		System.out.println(Tools.space(30) + colors.YELLOW + "Temps écoulé:       " + colors.PURPLE
 				+ t.getSeconds() + "s"
 				+ colors.WHITE);
