@@ -11,7 +11,7 @@ public class Ball implements Drawing, Move {
 
     Ball() {
         this.x = 50;
-        this.y = 20;
+        this.y = 34;
     }
 
     Ball(int x, int y) {
@@ -50,7 +50,7 @@ public class Ball implements Drawing, Move {
 
                 // lecture safe (renvoie ' ' si hors-bounds)
                 char cell = m.getChar(x, y);
-                System.out.println(cell);
+                //System.out.println(cell);
                 if (cell != ' ' && cell != 'o' && y == 40) {
                     if (!loose){
                         Main.pv.perdu();
@@ -66,7 +66,7 @@ public class Ball implements Drawing, Move {
                     }
                     mur.destroy(des);
                     this.velocity = -this.velocity;
-                    System.out.println("Brique toucer");
+                    //System.out.println("Brique toucer");
                 }else if (cell != ' ' && cell != 'o'){
                     this.velocity = -this.velocity;
                 }
