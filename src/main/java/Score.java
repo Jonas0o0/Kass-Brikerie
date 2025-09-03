@@ -54,9 +54,9 @@ public class Score{
 
     public void enregistrerScore(){ // Met à jour le CSV avec le score de l'utilisateur
         try {
-            File file = new File("/home/infoetu/ethan.seulin.etu/Public/dataKassBrikerie/scores.csv");
+        File file = new File("/home"+File.separator+"infoetu"+File.separator+"ethan.seulin.etu"+File.separator+"Public"+File.separator+"dataKassBrikerie"+File.separator+"scores.csv");
             if(!file.canExecute()||!file.canRead()) {
-                file = new File("res/scores.csv");
+                file = new File("res"+File.separator+"scores.csv");
             }
 
             BufferedReader br = new BufferedReader(new FileReader(file));

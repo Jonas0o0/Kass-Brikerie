@@ -3,6 +3,7 @@ package src.main.java.menu;
 import java.util.Scanner;
 
 import src.main.java.Tools;
+import src.main.java.colors.colors;
 
 public class menuManager {
     public static Scanner scanner;
@@ -36,6 +37,20 @@ public class menuManager {
         MenuLoading.DisplayDonuts(0.5);
         Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
+        System.out.println(
+                        colors.GREEN+" ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ "+colors.CYAN+"           ▄▄▄▄          "+colors.GREEN+" ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ \n" + //
+                        colors.GREEN+"▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.CYAN+"       ▐▀▀▀    ▀▀▀▌     "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n" + //
+                        colors.GREEN+"▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ "+colors.CYAN+"       ▌          ▐     "+colors.GREEN+" ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ \n" + //
+                        colors.GREEN+"▐░▌▐░▌  ▐░▌       ▐░▌▐░▌          ▐░▌          "+colors.CYAN+"     ▐▀            ▀▌   "+colors.GREEN+" ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌▐░▌  ▐░▌          ▐░▌       ▐░▌     ▐░▌     ▐░▌          \n" + //
+                        colors.GREEN+"▐░▌░▌   ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ "+colors.CYAN+"    ▐▀              ▀▌  "+colors.GREEN+" ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌░▌   ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ \n" + //
+                        colors.GREEN+"▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.CYAN+"    █                █  "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌     ▐░▌     ▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌\n" + //
+                        colors.GREEN+"▐░▌░▌   ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌"+colors.CYAN+"    ▐▄              ▄▌  "+colors.GREEN+" ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░▌░▌   ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀ \n" + //
+                        colors.GREEN+"▐░▌▐░▌  ▐░▌       ▐░▌          ▐░▌          ▐░▌"+colors.CYAN+"     ▐▄            ▄▌   "+colors.GREEN+" ▐░▌       ▐░▌▐░▌     ▐░▌       ▐░▌     ▐░▌▐░▌  ▐░▌          ▐░▌     ▐░▌       ▐░▌     ▐░▌          \n" + //
+                        colors.GREEN+"▐░▌ ▐░▌ ▐░▌       ▐░▌ ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌"+colors.CYAN+"       ▌          ▐     "+colors.GREEN+" ▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌  ▄▄▄▄█░█▄▄▄▄ ▐░▌ ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌  ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ \n" + //
+                        colors.GREEN+"▐░▌  ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.CYAN+"       ▐▄▄▄    ▄▄▄▌     "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n" + //
+                        colors.GREEN+" ▀    ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ "+colors.CYAN+"           ▀▀▀▀          "+colors.GREEN+" ▀▀▀▀▀▀▀▀▀▀   ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀    ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ \n" + //
+                        "                                                                                                                                                       \n" + //
+                        "");
         System.out.println("             [1] Jouer");
         System.out.println("             [2] Règles");
         System.out.println("             [3] Leaderboard");
@@ -50,9 +65,5 @@ public class menuManager {
         } catch (Exception e) {
             return false;
         }
-    }
-
-    public static void main(String[] args) {
-        menuPrincipal();
     }
 }

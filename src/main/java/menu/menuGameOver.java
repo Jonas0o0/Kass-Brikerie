@@ -13,6 +13,7 @@ public class menuGameOver {
 	public static void gameOverScreen(Timer t) {
 		Main.sc.enregistrerScore();
 		Tools.clearScreen();
+		System.out.println("\n\n\n\n");
 		Tools.gameOverScreen();
 		System.out.println("\n\n\n");
 		System.out.println(Tools.space(30) + Tools.space(14 - Main.sc.getNomJoueur().length()) + colors.YELLOW
@@ -29,7 +30,7 @@ public class menuGameOver {
 				+ t.getSeconds() + "s"
 				+ colors.WHITE);
 
-		System.out.println("Appuyez sur Entrée pour continuer...");
+		System.out.println("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
 
 		try {
 			Terminal terminal = TerminalBuilder.builder()

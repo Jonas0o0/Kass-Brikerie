@@ -27,9 +27,9 @@ public class menuClassement {
     }
 
     private static ArrayList<String[]> importerClassement() {
-        File file = new File("/home/infoetu/ethan.seulin.etu/Public/dataKassBrikerie/scores.csv");
+        File file = new File("/home"+File.separator+"infoetu"+File.separator+"ethan.seulin.etu"+File.separator+"Public"+File.separator+"dataKassBrikerie"+File.separator+"scores.csv");
         if (!file.canRead() || !file.canWrite()) {
-            file = new File("res/scores.csv");
+            file = new File("res"+File.separator+"scores.csv");
         }
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -92,8 +92,6 @@ public class menuClassement {
 
         int leftPadding = 16; // espaces à gauche
         int statsWidth = 104; // largeur fixe des stats
-
-        // Colonnes réparties dans les 104 caractères
         int col0Width = 35; // pseudo
         int col1Width = 20; // score
         int col2Width = 20; // blocs détruits

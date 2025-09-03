@@ -51,7 +51,7 @@ public class menuRules {
 
     public static void menuRegles() {
         printRules();
-        System.err.println("Appuyez sur Entrée pour continuer...");
+		System.out.println("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
         menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }
