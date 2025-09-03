@@ -18,6 +18,14 @@ public class BonusEntite implements Drawing{
         return this.posY;
     }
 
+    public int getLargeur(){
+        return 1;
+    }
+
+    public int getHauteur(){
+        return 1;
+    }
+
     public void bonusSlider(){
         Main.s.setTaille(Main.s.getLongueur()+2);
     }

@@ -58,4 +58,8 @@ public class Slider implements Drawing, Move{
         this.x += direction;
     }
 
+    public int getLongueur(){
+        return this.largeur;
+    }
+
 }
