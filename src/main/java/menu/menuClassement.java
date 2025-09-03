@@ -5,8 +5,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.tools.Tool;
+
 import src.main.java.Tools;
-import src.main.java.colors.colors;
 
 import java.io.BufferedReader;
 
@@ -69,22 +70,11 @@ public class menuClassement {
     }
 
     private static ArrayList<String> formatterClassement(ArrayList<String> list) {
-        int i=0;
         ArrayList<String> formatedList = new ArrayList<>();
         for(String e: list) {
-            formatedList.add(space(16)+"░██░"+space(44-e.length())+e+space(32)+"░██░");// 20 pixels de long
-            i++;
+            formatedList.add(Tools.space(16)+"░██░"+Tools.space(44-e.length())+e+Tools.space(32)+"░██░");// 20 pixels de long
         }
         return formatedList;
-    }
-
-    private static String space(int number) {
-        if(number<=0) return "";
-        String res="";
-        for (int i = 0; i < number; i++) {
-            res=res+" ";
-        }
-        return res;
     }
 
     public static void main(String[] args) {

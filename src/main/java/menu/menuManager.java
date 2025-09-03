@@ -30,7 +30,7 @@ public class menuManager {
         }
     }
 
-    public static void afficherMenuPrincipal() {
+    private static void afficherMenuPrincipal() {
         Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
         System.out.println("             [1] Jouer");
