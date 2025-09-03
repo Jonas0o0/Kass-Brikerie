@@ -4,7 +4,7 @@ public class Slider implements Drawing, Move{
     private int x;
     private int y;
     private int largeur; 
-    private final int HAUTEUR = 1;
+    private final int HAUTEUR = 2;
 
     Slider(int x, int y, int longueur){
         this.x = x;
@@ -13,7 +13,7 @@ public class Slider implements Drawing, Move{
     }
 
     Slider(){
-        this(10, 35,6);
+        this(50, 35,10);
     }
 
     public int getLargeur(){
@@ -56,10 +56,6 @@ public class Slider implements Drawing, Move{
     
     public void move(int direction){
         this.x += direction;
-    }
-
-    public int getLongueur(){
-        return this.largeur;
     }
 
 }
