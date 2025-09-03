@@ -35,4 +35,28 @@ public class Score{
         return this.nomJoueur;
     }
 
+    public void enregistrerScore(){ // Met à jour le CSV avec le score de l'utilisateur
+        try {
+            File file = new File("res/scores.csv");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+    
+            ArrayList<String> listeBase = new ArrayList<>();
+            String ligne;
+            while ((ligne=br.readLine())!=null) {
+                listeBase.add(ligne);
+            }
+            br.close();
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            for(String e: listeBase) {
+                bw.append(e);
+                bw.newLine();
+            }
+            bw.append(this.nomJoueur+","+this.valeur+",0");
+            bw.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
