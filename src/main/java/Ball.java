@@ -1,8 +1,8 @@
 package src.main.java;
 
+import src.main.java.colors.colors;
 import java.util.ArrayList;
 
-import src.main.java.colors.colors;
 
 public class Ball implements Drawing, Move {
     private double x;
@@ -33,7 +33,6 @@ public class Ball implements Drawing, Move {
     public int getX() {
         return (int) this.x;
     }
-
     public int getY() {
         return (int) this.y;
     }
@@ -84,7 +83,7 @@ public class Ball implements Drawing, Move {
                     if (!loose && Main.bs.size() == 0){
                         Main.pv.perdu();
                         Main.bs.add(new Ball());
-                        loose = true;
+
                     }
                 }else if ((cell == ':' || cell == '.') && cell != 'o'){
                     Brique des = null;
@@ -112,7 +111,10 @@ public class Ball implements Drawing, Move {
         }
         return false; // rien autour
     }
-
+    private void bounce(Slider s){
+        this.vx = (this.getX()- (s.getX() + s.getLargeur())/2) * 0.01;
+        this.vy = -vy; 
+    }
     private void bounce(Drawing r) {
         if (r == null) return;
         double overlapLeft   = (x + LARGEUR) - r.getX();
