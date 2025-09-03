@@ -51,7 +51,7 @@ public class menuRules {
 
     public static void menuRegles() {
         printRules();
-        System.err.println("Appuyez sur une touche pour continuer...");
+        System.err.println("Appuyez sur Entrée pour continuer...");
         menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }

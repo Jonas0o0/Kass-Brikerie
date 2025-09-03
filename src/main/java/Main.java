@@ -110,7 +110,6 @@ public class Main {
 
                                 if(pv.gameOver()) {
                                         menuGameOver.gameOverScreen(t);
-                                        menuManager.scanner.close();
                                         loose = true;
                                 }
 

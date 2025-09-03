@@ -1,7 +1,5 @@
 package src.main.java.menu;
 
-import java.util.Scanner;
-
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 

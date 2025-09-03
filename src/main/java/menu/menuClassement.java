@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 import src.main.java.Tools;
+import src.main.java.colors.colors;
 
 import java.io.BufferedReader;
 
@@ -25,18 +26,18 @@ public class menuClassement {
         menuManager.menuPrincipal();
     }
 
-    private static ArrayList<String> importerClassement() {
+    private static ArrayList<String[]> importerClassement() {
         File file = new File("/home/infoetu/ethan.seulin.etu/Public/dataKassBrikerie/scores.csv");
         if (!file.canRead() || !file.canWrite()) {
             file = new File("res/scores.csv");
         }
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
-            ArrayList<String> lines = new ArrayList<String>();
+            ArrayList<String[]> lines = new ArrayList<String[]>();
             String line;
             while ((line = br.readLine()) != null) {
                 String[] dataLine = line.split(",");
-                lines.add(dataLine[0] + " " + dataLine[1] + " " + dataLine[2]);
+                lines.add(dataLine);
             }
             br.close();
             return lines;
@@ -86,14 +87,62 @@ public class menuClassement {
                         "           ░████████████░                                                                  ░████████████░\n");
     }
 
-    private static ArrayList<String> formatterClassement(ArrayList<String> list) {
-        ArrayList<String> formatedList = new ArrayList<>();
-        for (String e : list) {
-            formatedList.add(Tools.space(16) + "░██░" + Tools.space(44 - e.length()) + e + Tools.space(32) + "░██░");// 20
-                                                                                                                     // pixels
-                                                                                                                     // de
-                                                                                                                     // long
+    private static ArrayList<String> formatterClassement(ArrayList<String[]> list) {
+        ArrayList<String> formattedList = new ArrayList<>();
+
+        int leftPadding = 16; // espaces à gauche
+        int statsWidth = 104; // largeur fixe des stats
+
+        // Colonnes réparties dans les 104 caractères
+        int col0Width = 35; // pseudo
+        int col1Width = 20; // score
+        int col2Width = 20; // blocs détruits
+
+        for (String[] e : list) {
+            String col0 = centerOrTrim(e[0], col0Width); // centré
+            String col1 = padOrTrim(e[1], col1Width); // à gauche
+            String col2 = padOrTrim(e[2], col2Width); // à gauche
+
+            // Construire les stats avec couleurs
+            String stats = colors.PURPLE + col0
+                    + colors.YELLOW + col1
+                    + colors.RED + col2
+                    + colors.WHITE;
+
+            // Ajuster à exactement statsWidth
+            stats = padOrTrim(stats, statsWidth);
+
+            // Ligne finale
+            String line = " ".repeat(leftPadding) + "░██░" + stats + "░██░";
+            formattedList.add(line);
         }
-        return formatedList;
+
+        return formattedList;
+    }
+
+    private static String padOrTrim(String s, int width) {
+        if (s.length() > width) {
+            return s.substring(0, width); // tronquer
+        } else {
+            return String.format("%-" + width + "s", s); // pad à droite
+        }
+    }
+
+    private static String centerOrTrim(String s, int width) {
+        if (s.length() > width) {
+            return s.substring(0, width);
+        } else {
+            int left = (width - s.length()) / 2;
+            int right = width - s.length() - left;
+            return " ".repeat(left) + s + " ".repeat(right);
+        }
+    }
+
+    public static void main(String[] args) {
+        ArrayList<String> a = new ArrayList<>();
+        a = formatterClassement(importerClassement());
+        for (String string : a) {
+            System.out.println(string);
+        }
     }
 }
