@@ -13,6 +13,7 @@ public class Main {
     public static HP pv;
     public static Ball b;
     public static Slider s;
+    public static ArrayList<Bonus> bonus;
     public static void main(String[] args) throws Exception {
         while (true) {
                 Main.sc = new Score();
@@ -20,6 +21,7 @@ public class Main {
                 Main.b = new Ball();
                 Main.s = new Slider();
                 Mur mr = new Mur();
+                Main.bonus = new ArrayList<Bonus>();
 
                 Matrix m = new Matrix();
 
@@ -56,10 +58,17 @@ public class Main {
                         
                         Main.b.collision(m, mr, s);
                         Main.b.move();
+                        for(Bonus b : Main.bonus){
+                                b.move();
+                        }
                         
                         m.clear(); //toujours clear avant le draw
                         for(int i=0;i<mur.size();i++){
                                 m.draw(mur.get(i).toString(), mur.get(i).getX(), mur.get(i).getY());
+                        }
+
+                        for(int i=0;i<Main.bonus.size();i++){
+                                m.draw(Main.bonus.get(i).toString(), Main.bonus.get(i).getX(), Main.bonus.get(i).getY());
                         }
 
                         m.draw(b.toString(), b.getX(), b.getY());

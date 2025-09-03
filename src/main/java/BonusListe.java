@@ -11,4 +11,8 @@ public enum BonusListe{
     BonusListe(String logo){
         this.logo = logo;
     }
+
+    public String toString(){
+        return this.logo;
+    }
 }

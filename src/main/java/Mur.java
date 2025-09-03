@@ -30,6 +30,7 @@ public class Mur{
         if (b != null){
             Main.sc.addScore(b.getScore());
             Main.sc.addNbrBriqueBreak();
+            Main.bonus.add(new Bonus(b.getX()+b.getLargeur()/2, b.getY()));
         }
         this.mur.remove(b);
     }
