@@ -108,10 +108,6 @@ public class Main {
                                 System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
                                 System.out.println("PV : " + Main.pv);
 
-                                System.out.println(bs);
-                                System.out.println(destroyBalls);
-
-
                                 if(pv.gameOver()) {
                                         menuGameOver.gameOverScreen(t);
                                         menuManager.scanner.close();

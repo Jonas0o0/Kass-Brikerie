@@ -55,7 +55,7 @@ public class Ball implements Drawing, Move {
 
     @Override
     public String toString() {
-        return "o";
+        return "⚽[U+200E]";
     }
 
     public void move() {
@@ -77,9 +77,9 @@ public class Ball implements Drawing, Move {
                 // lecture safe (renvoie ' ' si hors-bounds)
                 char cell = m.getChar(x, y);
                 
-                if (cell != ' ' && cell != 'o' && y == Matrix.resy) {
+                if (cell != ' ' && cell != '⚽' && y == Matrix.resy) {
                     Main.destroyBalls.add(this);
-                }else if ((cell == ':' || cell == '.') && cell != 'o'){
+                }else if ((cell == ':' || cell == '.') && cell != '⚽'){
                     Brique des = null;
                     for (Brique b : mur.afficherBriques()){
                         if (b.collision(x,y)){
@@ -88,12 +88,12 @@ public class Ball implements Drawing, Move {
                     }
                     mur.destroy(des);
                     this.bounce(des);
-                }else if (cell == '◼' && cell != 'o'){
+                }else if (cell == '◼' && cell != '⚽'){
                     this.bounce(s);
-                }else if (cell == '#' && cell != 'o' && y <= 1){
+                }else if (cell == '#' && cell != '⚽' && y <= 1){
                     this.bounce(new Rect(0, 0, Matrix.resx, 1));
                 }
-                else if (cell == '#' && cell != 'o'){
+                else if (cell == '#' && cell != '⚽'){
                     if (x <= 1){
                         this.bounce(new Rect(0, 0, 1, Matrix.resy));
                     }else{
@@ -106,7 +106,7 @@ public class Ball implements Drawing, Move {
         return false; // rien autour
     }
     private void bounce(Slider s){
-        this.vx = (this.getX()- (s.getX() + s.getLargeur())/2) * 0.01;
+        this.vx = (this.getX()- (s.getX() + s.getLargeur()/2)) * 0.01;
         this.vy = -vy; 
     }
     private void bounce(Drawing r) {
