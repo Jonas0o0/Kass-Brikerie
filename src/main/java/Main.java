@@ -12,6 +12,11 @@ import sun.misc.Signal;
 import sun.misc.SignalHandler;
 
 public class Main {
+        public final static int X_MUR = 30;
+        public final static int Y_MUR = 20;
+        public final static int HAUTEUR_MUR = 1;
+        public final static int LARGEUR_MUR = 1;
+
     public static Score sc;
     public static HP pv;
     public static ArrayList<Ball> bs;
@@ -41,12 +46,13 @@ public class Main {
                 
                 Main.sc = new Score();
                 Main.pv = new HP(3);
-                Main.bs = new ArrayList<Ball>();
-                Main.bs.add(new Ball());
                 Main.s = new Slider();
+                Main.bs = new ArrayList<Ball>();
+                Main.bs.add(new Ball(s.getX(), s.getY()-2));
                 Mur mr = new Mur();
                 Main.bonus = new ArrayList<Bonus>();
                 Main.destroyBalls = new ArrayList<Ball>();
+                int nbStages = 1;
 
                 Matrix m = new Matrix();
                 menuManager.scanner = new Scanner(System.in);
@@ -57,7 +63,7 @@ public class Main {
                 Timer t = new Timer();
 
                 ArrayList<Brique> mur = mr.afficherBriques();
-                mr.genererMur(1, 0, 4, 11);
+                mr.genererMur(X_MUR, Y_MUR, HAUTEUR_MUR, LARGEUR_MUR);
                 
 
                 // ---- IMPORTANT : ouvrir le terminal JLine UNE SEULE FOIS ----
@@ -80,6 +86,13 @@ public class Main {
                                         }
                                 }
 
+                                if(mr.detruit()){
+                                        nbStages++;
+                                        mr.genererMur(X_MUR, Y_MUR, HAUTEUR_MUR, LARGEUR_MUR);      
+                                        bs.clear();
+                                        bs.add(new Ball(s.getX(), s.getY()-2));                                
+                                }
+
 
                                 //verifie tous les bonus, les appliques et les supprimes si en dehors de l'écran
                                 for(int i = 0; i<bonus.size(); i++){
@@ -97,7 +110,7 @@ public class Main {
                                 Main.destroyBalls.clear();
                                 if (Main.bs.size() == 0){
                                         Main.pv.perdu();
-                                        Main.bs.add(new Ball());
+                                        Main.bs.add(new Ball(s.getX(), s.getY()-2));
                                 }
                                 
                                 for(Bonus b : Main.bonus){
@@ -123,6 +136,7 @@ public class Main {
                                 System.out.println("Score " + Main.sc.getNomJoueur() + "-> " + colors.YELLOW + Main.sc.getScore() + colors.WHITE);
                                 System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
                                 System.out.println("PV : " + Main.pv);
+                                System.out.println("N° de stage en cours : " + nbStages);
 
                                 if(pv.gameOver()) {
                                         menuGameOver.gameOverScreen(t);

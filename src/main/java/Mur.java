@@ -38,4 +38,12 @@ public class Mur{
         }
         this.mur.remove(b);
     }
+
+    public boolean detruit(){
+        boolean detruit = false;
+        if(mur.size()==0){
+            detruit = true;
+        }
+        return detruit;
+    }
 }

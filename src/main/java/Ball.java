@@ -65,8 +65,7 @@ public class Ball implements Drawing, Move {
 
     /** Collision "point" : on crashe si la case courante OU voisine contient un non-espace. */
     public void collision(Matrix m, Mur mur, Slider s) {
-        double norm = Math.sqrt(this.vx*this.vx + this.vy*vy);
-        int vitesse = 1;
+
         final int cx = getX();
         final int cy = getY();
 
@@ -105,12 +104,10 @@ public class Ball implements Drawing, Move {
 
             }
         }
-        this.vx = (this.vx/norm) * vitesse;
-        this.vy = (this.vy/norm) * vitesse; 
     }
     
     private void bounce(Slider s){
-        this.vx = (this.getX()- (s.getX() + s.getLargeur()/2)) * 0.1;
+        this.vx = (this.getX()- (s.getX() + s.getLargeur()/2)) * 0.05;
         this.vy = -vy; 
     }
     private void bounce(Drawing r) {
