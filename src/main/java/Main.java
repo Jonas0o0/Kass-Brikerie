@@ -8,6 +8,9 @@ import src.main.java.inputs.TickInputs;
 import src.main.java.menu.menuGameOver;
 import src.main.java.menu.menuManager;
 
+import sun.misc.Signal;
+import sun.misc.SignalHandler;
+
 public class Main {
     public static Score sc;
     public static HP pv;
@@ -16,6 +19,19 @@ public class Main {
     public static ArrayList<Bonus> bonus;
     public static ArrayList<Ball> destroyBalls;
     public static void main(String[] args) throws Exception {
+        Signal.handle(new Signal("INT"), new SignalHandler() {
+        @Override
+        public void handle(Signal sig) {
+                System.out.println("Ctrl+C détecté mais ignoré !");
+                // Ne rien faire -> le programme continue
+        }
+        });
+        Signal.handle(new Signal("TERM"), new SignalHandler() {
+        @Override
+        public void handle(Signal sig) {
+                System.out.println("Ctrl+\\ détecté mais ignoré !");
+        }
+        });
         while (true) {
                 // ---- Réglage du tick ----
                 final int TPS = 60; // ticks par seconde
