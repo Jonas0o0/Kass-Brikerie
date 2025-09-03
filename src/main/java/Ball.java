@@ -5,13 +5,15 @@ import src.main.java.colors.colors;
 public class Ball implements Drawing, Move {
     private double x;
     private double y;
-    public static final int HAUTEUR = 1;
-    public static final int LARGEUR = 1;
-    private double velocity = 1;
+    public final int HAUTEUR = 1;
+    public final int LARGEUR = 1;
+    
+    private double vx = +0.7;
+    private double vy = -1.0;
 
     Ball() {
         this.x = 50;
-        this.y = 34;
+        this.y = 20;
     }
 
     Ball(int x, int y) {
@@ -27,17 +29,26 @@ public class Ball implements Drawing, Move {
         return (int) this.y;
     }
 
+    public int getLargeur(){
+        return this.LARGEUR;
+    }
+
+    public int getHauteur(){
+        return this.HAUTEUR;
+    }
+
     @Override
     public String toString() {
         return "o";
     }
 
     public void move() {
-        this.y -= velocity;
+        this.y += vy;
+        this.x += vx;
     }
 
     /** Collision "point" : on crashe si la case courante OU voisine contient un non-espace. */
-    public boolean collision(Matrix m, Mur mur) {
+    public boolean collision(Matrix m, Mur mur, Slider s) {
         final int cx = getX();
         final int cy = getY();
         boolean loose = false;
@@ -50,8 +61,8 @@ public class Ball implements Drawing, Move {
 
                 // lecture safe (renvoie ' ' si hors-bounds)
                 char cell = m.getChar(x, y);
-                //System.out.println(cell);
-                if (cell != ' ' && cell != 'o' && y == 40) {
+                
+                if (cell != ' ' && cell != 'o' && y == Matrix.resy) {
                     if (!loose){
                         Main.pv.perdu();
                         Main.b = new Ball();
@@ -65,15 +76,53 @@ public class Ball implements Drawing, Move {
                         }
                     }
                     mur.destroy(des);
-                    this.velocity = -this.velocity;
-                    //System.out.println("Brique toucer");
-                }else if (cell != ' ' && cell != 'o'){
-                    this.velocity = -this.velocity;
+                    this.bounce(des);
+                }else if (cell == '◼' && cell != 'o'){
+                    this.bounce(s);
+                }else if (cell == '#' && cell != 'o' && y <= 1){
+                    this.bounce(new Rect(0, 0, Matrix.resx, 1));
+                }
+                else if (cell == '#' && cell != 'o'){
+                    if (x <= 1){
+                        this.bounce(new Rect(0, 0, 1, Matrix.resy));
+                    }else{
+                        this.bounce(new Rect(Matrix.resx, 0, 1, Matrix.resy));
+                    }
                 }
 
             }
         }
         return false; // rien autour
+    }
+
+    private void bounce(Drawing r) {
+        if (r == null) return;
+        double overlapLeft   = (x + LARGEUR) - r.getX();
+        double overlapRight  = (r.getX() + r.getLargeur()) - x;
+        double overlapTop    = (y + HAUTEUR) - r.getY();
+        double overlapBottom = (r.getY() + r.getHauteur()) - y;
+
+        // Trouver la pénétration minimale (la plus petite)
+        double minOverlapX = Math.min(overlapLeft, overlapRight);
+        double minOverlapY = Math.min(overlapTop, overlapBottom);
+
+        if (minOverlapX < minOverlapY) {
+            // collision horizontale → inverser vx
+            vx = -vx;
+            if (overlapLeft < overlapRight) {
+                x = r.getX() - LARGEUR; // recaler balle à gauche
+            } else {
+                x = r.getX() + r.getLargeur(); // recaler balle à droite
+            }
+        } else {
+            // collision verticale → inverser vy
+            vy = -vy;
+            if (overlapTop < overlapBottom) {
+                y = r.getY() - HAUTEUR; // recaler balle au-dessus
+            } else {
+                y = r.getY() + r.getHauteur(); // recaler balle en dessous
+            }
+        }
     }
 
 

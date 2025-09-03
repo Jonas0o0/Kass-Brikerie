@@ -4,7 +4,7 @@ public enum Bonus{
     SLIDER_PLUS_GRAND, HP_PLUS, AJOUT_BALLE, BALLE_RALENTIT;
 
     public void bonusSlider(){
-        Main.s.setTaille(Main.s.getLongueur()+2);
+        Main.s.setTaille(Main.s.getLargeur()+2);
     }
 
     public void HPPlus(){

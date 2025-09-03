@@ -3,20 +3,25 @@ package src.main.java;
 public class Slider implements Drawing, Move{
     private int x;
     private int y;
-    private int longueur; 
+    private int largeur; 
+    private final int HAUTEUR = 1;
 
     Slider(int x, int y, int longueur){
         this.x = x;
         this.y = y;
-        this.longueur = longueur;
+        this.largeur = longueur;
     }
 
     Slider(){
         this(10, 35,6);
     }
 
-    public int getLongueur() {
-        return longueur;
+    public int getLargeur(){
+        return this.largeur;
+    }
+
+    public int getHauteur(){
+        return this.HAUTEUR;
     }
 
     public int getX() {
@@ -27,15 +32,19 @@ public class Slider implements Drawing, Move{
         return this.y;
     }
 
+    public void setTaille(int taille){
+        this.largeur = taille;
+    }
+
     public void affichage(){
-        for(int i=0;i<this.longueur;i++){
+        for(int i=0;i<this.largeur;i++){
             System.out.print("◼");
         }
     }
 
     public String toString(){
         String s = "";
-        for(int i=0;i<this.longueur;i++){
+        for(int i=0;i<this.largeur;i++){
             s = s + "◼";
         }
         return s;
@@ -49,7 +58,4 @@ public class Slider implements Drawing, Move{
         this.x += direction;
     }
 
-    public void setTaille(int taille){
-        this.longueur = taille;
-    }
 }
