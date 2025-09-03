@@ -13,7 +13,7 @@ public class menuClassement {
 
         ArrayList<String> liste = new ArrayList<>();
         liste = formatterClassement(importerClassement());
-
+        MenuLoading.DisplayDonuts(0.5);
         Tools.clearScreen();
         printLogo();
         for (String s : liste) {
@@ -95,13 +95,5 @@ public class menuClassement {
                                                                                                                      // long
         }
         return formatedList;
-    }
-
-    public static void main(String[] args) {
-        ArrayList<String> a = new ArrayList<>();
-        a = importerClassement();
-        for (String string : a) {
-            System.out.println(string);
-        }
     }
 }

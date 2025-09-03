@@ -12,6 +12,7 @@ public class menuRules {
 
     // Afficher les règles
     public static void printRules() {
+        MenuLoading.DisplayDonuts(0.5);
         Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
         System.out.println(colors.CYAN + "===== RÈGLES DU JEU BREAKER =====" + colors.WHITE);

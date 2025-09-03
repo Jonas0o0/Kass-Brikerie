@@ -33,6 +33,7 @@ public class menuManager {
     }
 
     private static void afficherMenuPrincipal() {
+        MenuLoading.DisplayDonuts(0.5);
         Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
         System.out.println("             [1] Jouer");

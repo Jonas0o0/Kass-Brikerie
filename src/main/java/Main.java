@@ -127,6 +127,7 @@ public class Main {
                                 }
                                 TickInputs.LEFT.set(false);
                                 TickInputs.RIGHT.set(false);
+                                
                         }
                 } finally {
                         // Toujours fermer proprement
