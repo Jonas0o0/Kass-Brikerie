@@ -14,6 +14,7 @@ public class Main {
     public static ArrayList<Ball> bs;
     public static Slider s;
     public static ArrayList<Bonus> bonus;
+    public static ArrayList<Ball> destroyBalls;
     public static void main(String[] args) throws Exception {
         while (true) {
                 // ---- Réglage du tick ----
@@ -23,12 +24,13 @@ public class Main {
                 boolean loose = false;
                 
                 Main.sc = new Score();
-                Main.pv = new HP(20);
+                Main.pv = new HP(3);
                 Main.bs = new ArrayList<Ball>();
                 Main.bs.add(new Ball());
                 Main.s = new Slider();
                 Mur mr = new Mur();
                 Main.bonus = new ArrayList<Bonus>();
+                Main.destroyBalls = new ArrayList<Ball>();
 
                 Matrix m = new Matrix();
                 menuManager.scanner = new Scanner(System.in);
@@ -74,6 +76,13 @@ public class Main {
                                         Main.bs.get(i).collision(m, mr, s);
                                         Main.bs.get(i).move();
                                 }
+
+                                Main.bs.removeAll(Main.destroyBalls);
+                                Main.destroyBalls.clear();
+                                if (Main.bs.size() == 0){
+                                        Main.pv.perdu();
+                                        Main.bs.add(new Ball());
+                                }
                                 
                                 for(Bonus b : Main.bonus){
                                         b.move();
@@ -98,6 +107,9 @@ public class Main {
                                 System.out.println("Score " + Main.sc.getNomJoueur() + "-> " + colors.YELLOW + Main.sc.getScore() + colors.WHITE);
                                 System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
                                 System.out.println("PV : " + Main.pv);
+
+                                System.out.println(bs);
+                                System.out.println(destroyBalls);
 
 
                                 if(pv.gameOver()) {

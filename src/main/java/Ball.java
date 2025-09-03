@@ -67,7 +67,6 @@ public class Ball implements Drawing, Move {
     public boolean collision(Matrix m, Mur mur, Slider s) {
         final int cx = getX();
         final int cy = getY();
-        boolean loose = false;
 
         // Parcourt les 9 cases autour (y compris le centre)
         for (int dy = -1; dy <= 1; dy++) {
@@ -79,12 +78,7 @@ public class Ball implements Drawing, Move {
                 char cell = m.getChar(x, y);
                 
                 if (cell != ' ' && cell != 'o' && y == Matrix.resy) {
-                    Main.bs.remove(this);
-                    if (!loose && Main.bs.size() == 0){
-                        Main.pv.perdu();
-                        Main.bs.add(new Ball());
-
-                    }
+                    Main.destroyBalls.add(this);
                 }else if ((cell == ':' || cell == '.') && cell != 'o'){
                     Brique des = null;
                     for (Brique b : mur.afficherBriques()){

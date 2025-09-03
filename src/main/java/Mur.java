@@ -1,6 +1,7 @@
 package src.main.java;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Mur{
 
@@ -30,7 +31,10 @@ public class Mur{
         if (b != null){
             Main.sc.addScore(b.getScore());
             Main.sc.addNbrBriqueBreak();
-            Main.bonus.add(new Bonus(b.getX()+b.getLargeur()/2, b.getY()));
+            Random alea = new Random();
+            if(alea.nextInt(4)==0){
+                Main.bonus.add(new Bonus(b.getX()+b.getLargeur()/2, b.getY()));
+            }
         }
         this.mur.remove(b);
     }
