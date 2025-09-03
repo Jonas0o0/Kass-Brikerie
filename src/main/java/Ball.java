@@ -55,7 +55,7 @@ public class Ball implements Drawing, Move {
 
     @Override
     public String toString() {
-        return "⚽[U+200E]";
+        return "⚽\u200E";
     }
 
     public void move() {
