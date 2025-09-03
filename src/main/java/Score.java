@@ -1,6 +1,7 @@
 package src.main.java;
 
 
+import src.main.java.colors.colors;
 import src.main.java.menu.menuManager;
 
 import java.util.ArrayList;
@@ -35,7 +36,8 @@ public class Score{
 
 
     public void addNomJoueur(){
-        System.out.println("Entrez un nom de joueur : ");
+        Tools.clearScreen();
+        System.out.println("\n\n\n\n\n\n\n\n\n   "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+"Entrez un nom de joueur : ");
 
         nomJoueur = menuManager.scanner.nextLine();
     }

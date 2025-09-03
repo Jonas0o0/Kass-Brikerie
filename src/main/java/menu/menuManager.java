@@ -38,24 +38,24 @@ public class menuManager {
         Tools.clearScreen();
         System.out.println("\n\n\n\n\n\n\n");
         System.out.println(
-                        colors.GREEN+" ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ "+colors.CYAN+"           ▄▄▄▄          "+colors.GREEN+" ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ \n" + //
-                        colors.GREEN+"▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.CYAN+"       ▐▀▀▀    ▀▀▀▌     "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n" + //
-                        colors.GREEN+"▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ "+colors.CYAN+"       ▌          ▐     "+colors.GREEN+" ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ \n" + //
-                        colors.GREEN+"▐░▌▐░▌  ▐░▌       ▐░▌▐░▌          ▐░▌          "+colors.CYAN+"     ▐▀            ▀▌   "+colors.GREEN+" ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌▐░▌  ▐░▌          ▐░▌       ▐░▌     ▐░▌     ▐░▌          \n" + //
-                        colors.GREEN+"▐░▌░▌   ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ "+colors.CYAN+"    ▐▀              ▀▌  "+colors.GREEN+" ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌░▌   ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ \n" + //
-                        colors.GREEN+"▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.CYAN+"    █                █  "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌     ▐░▌     ▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌\n" + //
-                        colors.GREEN+"▐░▌░▌   ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌"+colors.CYAN+"    ▐▄              ▄▌  "+colors.GREEN+" ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░▌░▌   ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀ \n" + //
-                        colors.GREEN+"▐░▌▐░▌  ▐░▌       ▐░▌          ▐░▌          ▐░▌"+colors.CYAN+"     ▐▄            ▄▌   "+colors.GREEN+" ▐░▌       ▐░▌▐░▌     ▐░▌       ▐░▌     ▐░▌▐░▌  ▐░▌          ▐░▌     ▐░▌       ▐░▌     ▐░▌          \n" + //
-                        colors.GREEN+"▐░▌ ▐░▌ ▐░▌       ▐░▌ ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌"+colors.CYAN+"       ▌          ▐     "+colors.GREEN+" ▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌  ▄▄▄▄█░█▄▄▄▄ ▐░▌ ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌  ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ \n" + //
-                        colors.GREEN+"▐░▌  ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.CYAN+"       ▐▄▄▄    ▄▄▄▌     "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n" + //
-                        colors.GREEN+" ▀    ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ "+colors.CYAN+"           ▀▀▀▀          "+colors.GREEN+" ▀▀▀▀▀▀▀▀▀▀   ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀    ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ \n" + //
-                        "                                                                                                                                                       \n" + //
-                        "");
-        System.out.println("             [1] Jouer");
-        System.out.println("             [2] Règles");
-        System.out.println("             [3] Leaderboard");
-        System.out.println("             [4] Quitter\n\n\n\n\n");
-        System.out.println("[>] Choisissez votre option: ");
+                        colors.GREEN+"       ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ "+colors.RED+"             ▄▄▄▄            "+colors.GREEN+" ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ \n" + //
+                        colors.GREEN+"      ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.YELLOW+"         ▐▀▀▀    ▀▀▀▌       "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n" + //
+                        colors.GREEN+"      ▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ "+colors.GREEN+"         ▌          ▐       "+colors.GREEN+" ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ \n" + //
+                        colors.GREEN+"      ▐░▌▐░▌  ▐░▌       ▐░▌▐░▌          ▐░▌          "+colors.CYAN+"       ▐▀            ▀▌     "+colors.GREEN+" ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌▐░▌  ▐░▌          ▐░▌       ▐░▌     ▐░▌     ▐░▌          \n" + //
+                        colors.GREEN+"      ▐░▌░▌   ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ "+colors.BLUE+"      ▐▀              ▀▌    "+colors.GREEN+" ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌░▌   ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ \n" + //
+                        colors.GREEN+"      ▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.PURPLE+"      █                █    "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌     ▐░▌     ▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌\n" + //
+                        colors.GREEN+"      ▐░▌░▌   ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌"+colors.RED+"      ▐▄              ▄▌    "+colors.GREEN+" ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░▌░▌   ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀ \n" + //
+                        colors.GREEN+"      ▐░▌▐░▌  ▐░▌       ▐░▌          ▐░▌          ▐░▌"+colors.YELLOW+"       ▐▄            ▄▌     "+colors.GREEN+" ▐░▌       ▐░▌▐░▌     ▐░▌       ▐░▌     ▐░▌▐░▌  ▐░▌          ▐░▌     ▐░▌       ▐░▌     ▐░▌          \n" + //
+                        colors.GREEN+"      ▐░▌ ▐░▌ ▐░▌       ▐░▌ ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌"+colors.GREEN+"         ▌          ▐       "+colors.GREEN+" ▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌  ▄▄▄▄█░█▄▄▄▄ ▐░▌ ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌  ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ \n" + //
+                        colors.GREEN+"      ▐░▌  ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌"+colors.BLUE+"         ▐▄▄▄    ▄▄▄▌       "+colors.GREEN+" ▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n" + //
+                        colors.GREEN+"       ▀    ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ "+colors.PURPLE+"             ▀▀▀▀            "+colors.GREEN+" ▀▀▀▀▀▀▀▀▀▀   ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀    ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ \n" + //
+                        "                                                                                                                                                       \n\n" + //
+                        colors.WHITE);
+        System.out.println("                                                              "+colors.PURPLE+"["+colors.RED+"1"+colors.PURPLE+"]"+colors.RED+" Jouer");
+        System.out.println("                                                              "+colors.PURPLE+"["+colors.YELLOW+"2"+colors.PURPLE+"]"+colors.YELLOW+" Règles");
+        System.out.println("                                                              "+colors.PURPLE+"["+colors.GREEN+"3"+colors.PURPLE+"]"+colors.GREEN+" Leaderboard");
+        System.out.println("                                                              "+colors.PURPLE+"["+colors.CYAN+"4"+colors.PURPLE+"]"+colors.CYAN+" Quitter\n\n\n\n");
+        System.out.print("                                                      "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Choisissez votre option: "+colors.WHITE);
     }
 
     private static boolean isNumer(String stringNombre) {

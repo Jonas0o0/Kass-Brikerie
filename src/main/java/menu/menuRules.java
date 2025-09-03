@@ -23,7 +23,7 @@ public class menuRules {
         System.out.println();
 
         System.out.println(colors.YELLOW + "Commandes :" + colors.WHITE);
-        System.out.println("- Utilisez les flèches gauche et droite pour déplacer la raquette.");
+        System.out.println("- Utilisez les touches A et D pour déplacer la raquette.");
         System.out.println("- Ne laissez pas la balle tomber !");
         System.out.println();
 
@@ -33,8 +33,6 @@ public class menuRules {
         System.out.println(colors.GREEN + "● Briques" + colors.WHITE + " : À casser pour gagner.");
         System.out.println(colors.PURPLE + "● Bonus" + colors.WHITE
                 + " : Certains blocs libèrent des bonus (agrandissement, multi-balle...).");
-        System.out.println(colors.BLACK + "● Objets neutres / obstacles" + colors.WHITE
-                + " : Peuvent gêner ou ralentir.");
         System.out.println();
 
         System.out.println(colors.YELLOW + "Conditions de victoire :" + colors.WHITE);
@@ -51,7 +49,7 @@ public class menuRules {
 
     public static void menuRegles() {
         printRules();
-		System.out.println("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
+		System.out.print("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
         menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }

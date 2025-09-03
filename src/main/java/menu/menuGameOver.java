@@ -30,7 +30,7 @@ public class menuGameOver {
 				+ t.getSeconds() + "s"
 				+ colors.WHITE);
 
-		System.out.println("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
+		System.out.print("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
 
 		try {
 			Terminal terminal = TerminalBuilder.builder()

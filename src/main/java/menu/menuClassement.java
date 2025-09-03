@@ -21,7 +21,7 @@ public class menuClassement {
             System.out.println(s);
         }
         printFooter();
-        System.out.print("Appuyez sur entré pour quitter...");
+		System.out.print("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
         menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }
@@ -51,7 +51,7 @@ public class menuClassement {
 
     private static void printLogo() {
         System.out.print(
-                "    ░██         ░██████████    ░███    ░███████   ░██████████ ░█████████  ░████████     ░██████      ░███    ░█████████  ░███████   \n"
+                colors.YELLOW+"\n\n\n\n    ░██         ░██████████    ░███    ░███████   ░██████████ ░█████████  ░████████     ░██████      ░███    ░█████████  ░███████   \n"
                         + //
                         "    ░██         ░██           ░██░██   ░██   ░██  ░██         ░██     ░██ ░██    ░██   ░██   ░██    ░██░██   ░██     ░██ ░██   ░██  \n"
                         + //
@@ -71,10 +71,10 @@ public class menuClassement {
                         + //
                         "                                                                                                                                    \n"
                         + //
-                        "           ░████████████░                                                                  ░████████████░                                                  \n"
-                        + //
+           colors.GREEN+"           ░████████████░          "+colors.BLUE+"Name               Score             Briques           "+colors.GREEN+" ░████████████░                                                  \n"
+                        +colors.GREEN+ //
                         "              ░██████░                                                                        ░██████░\n"
-                        + //
+                        +colors.GREEN+ //
                         "               ░████░                                                                          ░████░\n");
     }
 
@@ -111,7 +111,7 @@ public class menuClassement {
             stats = padOrTrim(stats, statsWidth);
 
             // Ligne finale
-            String line = " ".repeat(leftPadding) + "░██░" + stats + "░██░";
+            String line = " ".repeat(leftPadding) +colors.GREEN+"░██░" + stats +colors.GREEN+"░██░";
             formattedList.add(line);
         }
 
