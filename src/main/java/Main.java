@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import src.main.java.colors.colors;
-import src.main.java.inputs.tickInputs;
+import src.main.java.inputs.TickInputs;
 
 import src.main.java.menu.menuManager;
 
@@ -16,6 +16,10 @@ public class Main {
     public static ArrayList<Bonus> bonus;
     public static void main(String[] args) throws Exception {
         while (true) {
+                // ---- Réglage du tick ----
+                final int TPS = 60; // ticks par seconde
+                final long STEP_NS = 1_000_000_000L / TPS; // durée d'un tick en ns
+                
                 Main.sc = new Score();
                 Main.pv = new HP(3);
                 Main.b = new Ball();
@@ -35,67 +39,82 @@ public class Main {
                 mr.genererMur(1, 0, 4, 11);
                 
 
+                // ---- IMPORTANT : ouvrir le terminal JLine UNE SEULE FOIS ----
+                TickInputs.init();
 
-                while(true){
-
-                        char keyPressed = tickInputs.inputKey();
-                        if(keyPressed==27) {
+                try {
+                        while(true){
+                                long now = System.nanoTime();
+                                int key = TickInputs.poll(); // a/q = gauche, d = droite, e = quitter
+                                if (key == 'm' || key == 'M') {
                                 menuManager.menuPrincipal();
-                        }
-                        Tools.clearScreen();
-
-                        if(keyPressed=='D' || keyPressed=='d') {
-                                if(s.getX()<Matrix.resx-(s.getLargeur()/2)){
-                                s.move(1);
                                 }
-                        }
-                        if(keyPressed=='A' || keyPressed=='a' || keyPressed=='Q' || keyPressed=='q') {
-                                if(s.getX()>(s.getLargeur()/2)){
+                                if (TickInputs.left())
                                 s.move(-1);
-                                }
-                        }
-
-                        
-                        Main.b.collision(m, mr, s);
-                        Main.b.move();
-                        for(Bonus b : Main.bonus){
-                                b.move();
-                        }
-                        
-                        m.clear(); //toujours clear avant le draw
-                        for(int i=0;i<mur.size();i++){
-                                m.draw(mur.get(i).toString(), mur.get(i).getX(), mur.get(i).getY());
-                        }
-
-                        for(int i=0;i<Main.bonus.size();i++){
-                                m.draw(Main.bonus.get(i).toString(), Main.bonus.get(i).getX(), Main.bonus.get(i).getY());
-                        }
-
-                        m.draw(b.toString(), b.getX(), b.getY());
-                        m.draw(s.toString(), s.getX() - (s.getLargeur() / 2), s.getY());
-                        
-                        System.out.print(m.render());
-                        System.out.println("Score " + Main.sc.getNomJoueur() + "-> " + colors.YELLOW + Main.sc.getScore() + colors.WHITE);
-                        System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
-                        System.out.println("PV : " + Main.pv);
+                                if (TickInputs.right())
+                                s.move(1);
 
 
-                        if(pv.gameOver()) {
-                                Scanner scanner = new Scanner(System.in);
-                                sc.enregistrerScore();
                                 Tools.clearScreen();
-                                Tools.gameOverScreen();
-                                System.out.println("\n\n\n");
-                                System.out.println(Tools.space(20)+colors.YELLOW+"[ "+colors.PURPLE+sc.getNomJoueur()+colors.YELLOW+" ]\n"+colors.WHITE);
-                                System.out.println(Tools.space(20)+colors.YELLOW+"Score: \t"+colors.PURPLE+sc.getScore()+colors.WHITE);
-                                System.out.println(Tools.space(20)+colors.YELLOW+"Brique cassées: \t"+colors.PURPLE+sc.getScore()+colors.WHITE);
-                                System.out.println(Tools.space(20)+colors.YELLOW+"Temps écoulé: \t"+colors.PURPLE+t.getSeconds()+"s"+colors.WHITE);
-                                scanner.nextLine();
-                                System.out.println("Appuyez sur entré pour continuer...");
-                                break;
+
+                                
+                                Main.b.collision(m, mr, s);
+                                Main.b.move();
+                                for(Bonus b : Main.bonus){
+                                        b.move();
+                                }
+                                
+                                m.clear(); //toujours clear avant le draw
+                                for(int i=0;i<mur.size();i++){
+                                        m.draw(mur.get(i).toString(), mur.get(i).getX(), mur.get(i).getY());
+                                }
+
+                                for(int i=0;i<Main.bonus.size();i++){
+                                        m.draw(Main.bonus.get(i).toString(), Main.bonus.get(i).getX(), Main.bonus.get(i).getY());
+                                }
+
+                                m.draw(b.toString(), b.getX(), b.getY());
+                                m.draw(s.toString(), s.getX() - (s.getLargeur() / 2), s.getY());
+                                
+                                System.out.print(m.render());
+                                System.out.println("Score " + Main.sc.getNomJoueur() + "-> " + colors.YELLOW + Main.sc.getScore() + colors.WHITE);
+                                System.out.println("Temps écoulés -> " + t.getSeconds() + "s" );
+                                System.out.println("PV : " + Main.pv);
+
+
+                                if(pv.gameOver()) {
+                                        Scanner scanner = new Scanner(System.in);
+                                        sc.enregistrerScore();
+                                        Tools.clearScreen();
+                                        Tools.gameOverScreen();
+                                        System.out.println("\n\n\n");
+                                        System.out.println(Tools.space(20)+colors.YELLOW+"[ "+colors.PURPLE+sc.getNomJoueur()+colors.YELLOW+" ]\n"+colors.WHITE);
+                                        System.out.println(Tools.space(20)+colors.YELLOW+"Score: \t"+colors.PURPLE+sc.getScore()+colors.WHITE);
+                                        System.out.println(Tools.space(20)+colors.YELLOW+"Brique cassées: \t"+colors.PURPLE+sc.getScore()+colors.WHITE);
+                                        System.out.println(Tools.space(20)+colors.YELLOW+"Temps écoulé: \t"+colors.PURPLE+t.getSeconds()+"s"+colors.WHITE);
+                                        scanner.nextLine();
+                                        System.out.println("Appuyez sur entré pour continuer...");
+                                        break;
+                                }
+
+                                // 4) Régulation simple (petit sleep pour éviter 100% CPU)
+                                long elapsed = System.nanoTime() - now;
+                                long sleepNs = STEP_NS - elapsed; // 1 frame ≈ 1 update
+                                if (sleepNs > 0) {
+                                long ms = sleepNs / 1_000_000L;
+                                int ns = (int) (sleepNs % 1_000_000L);
+                                try {
+                                        Thread.sleep(ms, ns);
+                                } catch (InterruptedException ignored) {
+                                }
+                                }
+                                TickInputs.LEFT.set(false);
+                                TickInputs.RIGHT.set(false);
                         }
+                } finally {
+                        // Toujours fermer proprement
+                        TickInputs.shutdown();
                 }
         }
     }
 }
-

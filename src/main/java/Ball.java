@@ -8,8 +8,8 @@ public class Ball implements Drawing, Move {
     public final int HAUTEUR = 1;
     public final int LARGEUR = 1;
     
-    private double vx = +0.7;
-    private double vy = -1.0;
+    private double vx = +0.1;
+    private double vy = -0.2;
 
     Ball() {
         this.x = 50;

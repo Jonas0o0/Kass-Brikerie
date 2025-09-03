@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Bonus implements Drawing, Move{
 
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     private BonusListe bonus;
     
-    public Bonus(int posX, int posY){
+    public Bonus(double posX, double posY){
         this.x = posX;
         this.y = posY;
         Random alea = new Random();
@@ -16,11 +16,11 @@ public class Bonus implements Drawing, Move{
     }
 
     public int getX(){
-        return this.x;
+        return (int) this.x;
     }    
 
     public int getY(){
-        return this.y;
+        return (int) this.y;
     }
 
     public int getLargeur(){
@@ -32,7 +32,7 @@ public class Bonus implements Drawing, Move{
     }
 
     public void move(){
-        this.y += 1;
+        this.y += 0.2;
     }
 
     public void bonusSlider(){
