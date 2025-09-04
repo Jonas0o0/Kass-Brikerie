@@ -61,6 +61,8 @@ public class Main {
 
                 sc.addNomJoueur(); // Affichage du choix du Nom du Joueur
 
+                MenuLoading.DisplayDonuts(0.5);
+
                 Timer t = new Timer();
 
                 ArrayList<Brique> mur = mr.afficherBriques();
@@ -92,7 +94,11 @@ public class Main {
                                         mr.genererMur(X_MUR, Y_MUR, HAUTEUR_MUR, LARGEUR_MUR);      
                                         bs.clear();
                                         bs.add(new Ball(s.getX(), s.getY()-2));    
-                                        MenuLoading.DisplayDonuts(0.5);                            
+                                        MenuLoading.DisplayDonuts(0.5); 
+                                        for(int i = 0; i<bs.size(); i++){
+                                                bs.get(i).setVx(bs.get(i).getVx()*1.10);
+                                                bs.get(i).setVy(bs.get(i).getVy()*1.10);
+                                        }                           
                                 }
 
 
