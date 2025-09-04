@@ -103,7 +103,7 @@ public class Ball implements Drawing, Move {
     }
     
     private void bounce(Slider s){
-        this.vx = (this.getX()- (s.getX() + s.getLargeur()/2)) * 0.05;
+        this.vx = (this.getX()- (s.getX() + s.getLargeur()/8)) * 0.05;
         this.vy = -vy; 
     }
     private void bounce(Drawing r) {
