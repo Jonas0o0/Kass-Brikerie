@@ -55,7 +55,7 @@ public class Bonus implements Drawing, Move{
     }
 
     public static void check(ArrayList<Bonus> list, Bonus b){
-        if(b.getX()>=Main.s.getX() && b.getX()<=(Main.s.getX()+Main.s.getLargeur()) && b.getY()-b.getHauteur()<=Main.s.getY() && b.getY()>=Main.s.getY()){
+        if(b.getX()>=Main.s.getX() && b.getX()<=(Main.s.getX()+Main.s.getLargeur()) && b.getY()-b.getHauteur()<=Main.s.getY() && b.getY()+b.getHauteur()>=Main.s.getY()){
             if(b.bonus.logo==BonusListe.SLIDER_PLUS_GRAND.logo){
                 b.bonusSlider();
                 remove(list, b);
