@@ -40,6 +40,23 @@ public class menuClassement {
                 lines.add(dataLine);
             }
             br.close();
+            lines.sort((a, b) -> {
+                int scoreA = Integer.parseInt(a[1]);
+                int scoreB = Integer.parseInt(b[1]);
+                return Integer.compare(scoreB, scoreA); // ordre décroissant (du plus grand au plus petit)
+            });
+
+            for (int i = lines.size()-1; i >=17; i=i-1) {
+                lines.remove(i);
+            }
+
+            try {
+                String premier = lines.get(0)[0];
+                lines.get(0)[0] = "🏆 "+premier+" 🏆";
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             return lines;
         } catch (Exception e) {
             System.out.println("Veuillez créer un fichier de sauvegarde /res/scores.csv");
@@ -64,8 +81,6 @@ public class menuClassement {
                         "    ░██         ░██         ░██    ░██ ░██   ░██  ░██         ░██    ░██  ░██     ░██  ░██   ░██  ░██    ░██ ░██    ░██  ░██   ░██  \n"
                         + //
                         "    ░██████████ ░██████████ ░██    ░██ ░███████   ░██████████ ░██     ░██ ░█████████    ░██████   ░██    ░██ ░██     ░██ ░███████   \n"
-                        + //
-                        "                                                                                                                                    \n"
                         + //
                         "                                                                                                                                    \n"
                         + //
