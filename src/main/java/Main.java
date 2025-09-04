@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import src.main.java.colors.colors;
 import src.main.java.inputs.TickInputs;
+import src.main.java.menu.MenuLoading;
 import src.main.java.menu.menuGameOver;
 import src.main.java.menu.menuManager;
 
@@ -12,10 +13,10 @@ import sun.misc.Signal;
 import sun.misc.SignalHandler;
 
 public class Main {
-        public final static int X_MUR = 30;
-        public final static int Y_MUR = 20;
-        public final static int HAUTEUR_MUR = 1;
-        public final static int LARGEUR_MUR = 1;
+        public final static int X_MUR = 1;
+        public final static int Y_MUR = 0;
+        public final static int HAUTEUR_MUR = 3;
+        public final static int LARGEUR_MUR = 11;
 
     public static Score sc;
     public static HP pv;
@@ -90,7 +91,8 @@ public class Main {
                                         nbStages++;
                                         mr.genererMur(X_MUR, Y_MUR, HAUTEUR_MUR, LARGEUR_MUR);      
                                         bs.clear();
-                                        bs.add(new Ball(s.getX(), s.getY()-2));                                
+                                        bs.add(new Ball(s.getX(), s.getY()-2));    
+                                        MenuLoading.DisplayDonuts(0.5);                            
                                 }
 
 

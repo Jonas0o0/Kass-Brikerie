@@ -30,7 +30,7 @@ public class Bonus implements Drawing, Move{
     }
 
     public int getHauteur(){
-        return 1;
+        return 2;
     }
 
     public void move(){
@@ -55,7 +55,7 @@ public class Bonus implements Drawing, Move{
     }
 
     public static void check(ArrayList<Bonus> list, Bonus b){
-        if(b.getX()>=Main.s.getX() && b.getX()<=(Main.s.getX()+Main.s.getLargeur()) && b.getY()==Main.s.getY()){
+        if(b.getX()>=Main.s.getX() && b.getX()<=(Main.s.getX()+Main.s.getLargeur()) && b.getY()-b.getHauteur()<=Main.s.getY() && b.getY()>=Main.s.getY()){
             if(b.bonus.logo==BonusListe.SLIDER_PLUS_GRAND.logo){
                 b.bonusSlider();
                 remove(list, b);
@@ -73,8 +73,8 @@ public class Bonus implements Drawing, Move{
                 remove(list, b);
             }else{
                 for(Ball ball : Main.bs){
-                    ball.setVx(ball.getVx()/2);
-                    ball.setVy(ball.getVy()/2);
+                    ball.setVx(ball.getVx()*0.95);
+                    ball.setVy(ball.getVy()*0.95);
                 }
                 remove(list, b);
             }
