@@ -38,7 +38,6 @@ public class menuGameOver {
 					.dumb(true)
 					.build();
 			terminal.enterRawMode();
-			Thread.sleep(500);
 			terminal.reader().read();
 			terminal.close();
 		} catch (Exception e) {

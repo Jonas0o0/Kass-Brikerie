@@ -21,7 +21,7 @@ public class menuClassement {
             System.out.println(s);
         }
         printFooter();
-		System.out.print("\n "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
+		System.out.print("\n "+Tools.space(10)+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+" Appuyez sur Entrée pour continuer..."+colors.WHITE);
         menuManager.scanner.nextLine();
         menuManager.menuPrincipal();
     }
