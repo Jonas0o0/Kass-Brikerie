@@ -3,7 +3,7 @@ package src.main.java.menu;
 import java.util.Arrays;
 
 public class MenuLoading {
-    public static void DisplayDonuts(double Duration) {
+    public static void DisplayDonuts(double Duration) { // https://github.com/djbartolini/JavaDonut
         int k; // integer loop counter
         double A = 0, B = 0, i, j; // A & B - rotation angles // i & j - double-precision loop counters
 
