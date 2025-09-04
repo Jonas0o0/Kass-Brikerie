@@ -37,7 +37,7 @@ public class Score{
 
     public void addNomJoueur(){
         Tools.clearScreen();
-        System.out.println("\n\n\n\n\n\n\n\n\n   "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+"Entrez un nom de joueur : ");
+        System.out.println("\n\n\n\n\n\n\n\n\n   "+colors.PURPLE+"["+colors.GREEN+">"+colors.PURPLE+"]"+colors.YELLOW+"Entrez un nom de joueur : " + colors.WHITE);
 
         nomJoueur = menuManager.scanner.nextLine();
     }
