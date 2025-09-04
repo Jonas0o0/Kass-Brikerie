@@ -1,9 +1,5 @@
 package src.main.java;
 
-import src.main.java.colors.colors;
-import java.util.ArrayList;
-
-
 public class Ball implements Drawing, Move {
     private double x;
     private double y;

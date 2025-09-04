@@ -6,13 +6,13 @@ public class Slider implements Drawing, Move{
     private int largeur; 
     private final int HAUTEUR = 1;
 
-    Slider(int x, int y, int longueur){
+    public Slider(int x, int y, int longueur){
         this.x = x;
         this.y = y;
         this.largeur = longueur;
     }
 
-    Slider(){
+    public Slider(){
         this(50, 35,10);
     }
 
